@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "lastname": "Babiarz",
+      "firstname": "Kevin",
+      "pseudo": "kev.babiarz",
+      "email": "kevin.babiarz@gmail.com",
+      "password":"dundalk",
+      "role": "Admin"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cuisine",
+      "icon": "👨‍🍳"
+    },
+    {
+      "id": 2,
+      "name": "Jardinage",
+      "icon": "👨‍🌾"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Faire une polognaise pour 15 personnes",
+      "category": 1,
+      "description" : "Faire à manger pour toutes la famille ( pas trop épicé )",
+      "from" : 1,
+      "to": 1,
+      "beingDate" : "2023-07-08T10:00",
+      "expectedEndingDate": "2023-07-08T12:00",
+      "realEndingDate" : null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<section>
+  <h4>Formulaire de connexion</h4>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <label *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']" class="error">Username requis</label>
+    <input type="text" placeholder="Username" formControlName="username">
+    <label *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']" class="error">Password requis</label>
+    <input type="password" placeholder="Password" formControlName="password">
+    <button>Se connecter</button>
+  </form>
+</section>

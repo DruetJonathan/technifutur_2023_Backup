@@ -1,0 +1,10 @@
+.parent {
+    border: 2px solid darkgoldenrod;
+    padding: 2rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

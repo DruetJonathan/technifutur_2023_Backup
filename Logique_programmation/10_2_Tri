@@ -1,0 +1,117 @@
+
+---------------------------------------------------
+trier(tab : N[])
+	creerTas(tab)
+
+fin trier
+---------------------------------------------------
+creerTas(tab : N[])
+	indice : N <- 1
+	pour indice allant de 1 à longeur(tab)
+		Tant que indice > 0 et tab[indice] > t[(indice-1)/2]
+			permuter(tab,indice,(indiceCourant-1)/2)
+			indice <- (indice-1)/2
+		fintantque
+	indice suivant
+fin creerTas
+---------------------------------------------------
+equilibrerTas(tab : N[],tailleArbre : N,racine : N)
+	pour tailleArbre allant de longeur(tab) à 1
+
+	tailleArbre precedent
+fin equilibrerTas
+
+---------------------------------------------------
+grandFils(tab : N[],taille : N,racine : N)
+	var gf <- racine
+	var fils <- N[2]
+	fils[1] <- racine *2
+	fils[2] <- racine *2+1
+	pour i allant de 1 à 2
+		si fils[i] <= taille
+			alors
+				si tab[gf] < tab[fils[i]]
+					alors gf <- fils[i]
+				finsi
+		finsi
+	i suivant
+	retourne gf
+fin grandFils
+---------------------------------------------------
+permuter(tab: N[],i : N, J : N)
+	temp <- tab[i]
+	tab[i] <- tab[j]
+	tab[j] <- temp
+fin permuter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------
+trier(int[] tab)//trier le tableau pour que les nombres soient dans le bonne ordre
+CreerTas(tab)
+pour tailleAbre allant de longueur(tab) à 1 par pas de moins -1
+    permuterTab(tab, 1, tailleArbre)
+    tailleArbre--
+    EquilibreTas(tab, tailleArbre, 1)
+tailleAbre suivant
+
+fin trier
+
+CreerTas(int[] tab){ //Passer le tableau en état de "Tas" en le triant
+pour i allant de longueur(tab)/2 à 1 par pas de -1
+    EquilibreTas(tab, longueur(tab), i)
+i suivant 
+
+}
+
+
+EquilibreTas(int[] tab, int TailleAbre, int PosRacine)
+
+exposant <- longueur(tab)DIV 2
+diff = longueur(tab) mod (2^exposant)
+taille = longueur(tab) - diff
+
+pour i allant de taille à 1 par pas de -1 
+        test=i
+        tant que test <> 0 || test < taille 
+        si tab(i2)>tab(i2+1) && tab(i)<(tab(i2))
+            permuterTab(tab, i, (i2))
+            test=test2
+        sinon si tab(i)<tab(i2+1)
+            permuterTab(tab, i, (i2)+1)
+            test=test2+1
+        sinon
+            test=0
+        fin si 
+    fin tant que
+i suivant 
+
+procédure permuterTab(int[] tab, int pos, int pos2){
+    var temp : N <- tab(pos)
+
+    tab(pos) <- tab(pos2);
+    tab(pos2) <- temp; 
+}

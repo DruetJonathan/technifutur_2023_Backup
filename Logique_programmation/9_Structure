@@ -1,0 +1,36 @@
+STRUCTURE Date
+    VAR jour : N
+    VAR mois : N
+    VAR an : N
+FINSTRUCTURE
+
+
+STRUCTURE Stagiaire:
+    var prenom : T
+    var nom : T
+    var ddn: Date
+FINSTRUCTURE
+
+debut prm
+    var tabStagiaire: Stagiaire[13]
+    var indice : N <- 1
+
+    Pour indice allant de 1 à 13
+        stagiaire <- CREER Stagiaire
+        affiche "Saisir prenom: "
+        saisir tabStagiaire[indice] <- stagiaire.prenom
+        affiche "Saisir nom: "
+        saisir tabStagiaire[indice] <- stagiaire.nom
+        affiche "Saisir date de naissance: "
+        saisir tabStagiaire[indice] <- CREER Date 
+        affiche "Saisir le jour: "
+        saisir tabStagiaire[indice].ddn.jour
+        affiche "Saisir le mois: "
+        saisir tabStagiaire[indice].ddn.mois
+        affiche "Saisir l'année: "
+        saisir tabStagiaire[indice].ddn.an
+
+    indice suivant
+fin prgm
+
+

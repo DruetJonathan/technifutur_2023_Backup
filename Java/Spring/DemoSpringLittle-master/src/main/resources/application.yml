@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/demoSpring
+    username: postgres
+    password: postgres
+  jpa:
+    show: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+jwt:
+  secret: gfdlkghmlkfhgmjlqshgdlfydgysjfdfsjghsgdflmhfdiul
+  duration: 86400000
+
+server:
+  port: 8081

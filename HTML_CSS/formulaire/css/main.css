@@ -1,0 +1,102 @@
+h1 {
+    color: #008b8b;
+}
+
+#mainContainer,
+section {
+    text-align: center;
+    width: 700px;
+    overflow: hidden;
+}
+
+li {
+    list-style-type: none;
+}
+
+#mainContainer {
+    display: flex;
+    background-color: rgba(255, 255, 255, .85);
+    margin: 50px auto;
+    width: 1000px;
+    padding: 20px;
+}
+
+body div {
+    display: flex;
+    align-items: center;
+}
+
+#div1,
+#mainContainer {
+    flex-direction: column;
+}
+
+img {
+    width: 250px;
+}
+
+footer,
+section {
+    margin: 10px;
+    border: 1px solid #000;
+}
+
+body {
+    background-image: url(../images/coin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    border-bottom: 1px solid #000;
+    margin: 0;
+    background-color: #008b8b;
+    color: #fff;
+}
+
+/**/
+#div1 section dl,
+#div1 section ul,
+footer p {
+    height: 0px;
+    margin: 0;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+
+
+#div1 section h2,
+footer h2 {
+    height: 200px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/*footer h2 {
+    height: 50px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}*/
+
+#div1 section:hover h2,
+footer:hover h2 {
+    height: 50px;
+}
+
+#div1 section:hover dl,
+#div1 section:hover ul,
+footer:hover p {
+    height: 130px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

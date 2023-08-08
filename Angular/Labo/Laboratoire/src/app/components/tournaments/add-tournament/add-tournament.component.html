@@ -1,0 +1,42 @@
+<section>
+  <h1>Formulaire d'ajout</h1>
+  <form [formGroup]="addForm" (ngSubmit)="addTournament()">
+    <div>
+      <label *ngIf="addForm.get('name')?.touched && addForm.get('name')?.errors?.['required']" class="error">Nom requis</label>
+      <input type="text" placeholder="Nom*" formControlName="name">
+      <input type="text" placeholder="Lieu" formControlName="location">
+    </div>
+    <div>
+      <label *ngIf="addForm.get('minPlayers')?.touched && addForm.get('minPlayers')?.errors?.['required']" class="error">Nombre min. de joueurs requis</label>
+      <label *ngIf="addForm.get('minPlayers')?.touched && addForm.get('minPlayers')?.errors?.['min']" class="error">Minimum de 2 jours</label>
+      <input type="number" placeholder="Nombre minimum de joueurs (2-16)*" formControlName="minPlayers">
+      <label *ngIf="addForm.get('maxPlayers')?.touched && addForm.get('maxPlayers')?.errors?.['required']" class="error">Nombre max. de joueurs requis</label>
+      <label *ngIf="addForm.get('maxPlayers')?.touched && addForm.get('maxPlayers')?.errors?.['max']" class="error">Minimum de 16 jours</label>
+      <input type="number" placeholder="Nombre maximum de joueurs (2-16)*" formControlName="maxPlayers">
+    </div>
+    <div>
+      <input type="number" placeholder="Elo minimum (0-3000)" formControlName="eloMin">
+      <input type="number" placeholder="Elo minimum (0-3000)" formControlName="eloMax">
+    </div>
+    <div>
+      <div formArrayName="categories">
+        <div *ngFor="let enum of TournamentCategory | keyvalue">
+          <input type="checkbox" value="{{enum.value}}" (click)="addCategory(enum.value)">{{enum.value}}
+        </div>
+      </div>
+      <label for="dateFin">Date fin d'inscriptions</label>
+      <label *ngIf="addForm.get('endOfRegistrationDate')?.touched && addForm.get('endOfRegistrationDate')?.errors?.['required']" class="error">Date fin d'inscription requise</label>
+      <label *ngIf="addForm.get('endOfRegistrationDate')?.touched && addForm.get('endOfRegistrationDate')?.errors?.['dateSupAjdValidator']" class="error">Date fin d'inscription antérieur à la date d'aujourd'hui</label>
+      <input type="date" id="dateFin" formControlName="endOfRegistrationDate">
+    </div>
+    <div id="divButton">
+    <div>
+      <label for="womenOnly">Réservé aux filles</label>
+      <input type="checkbox" formControlName="womenOnly" id="womenOnly">
+    </div>
+      <button type="reset">Reset</button>
+      <button type="submit">Ajouter</button>
+    </div>
+
+  </form>
+</section>

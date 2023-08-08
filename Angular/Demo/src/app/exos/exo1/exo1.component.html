@@ -1,0 +1,11 @@
+<h2>Exo 1</h2>
+<div class="chapter">
+    <div class="container">
+        <p>{{chronoNumber | formatChrono}}</p>
+        <div class="divButton">
+            <button (click)="start()" [disabled]="chrono">Start</button>
+            <button (click)="pause()" [disabled]="!chrono">Pause</button>
+            <button (click)="reset()" [disabled]="chronoNumber === 0">Reset</button>
+        </div>
+    </div>
+</div>

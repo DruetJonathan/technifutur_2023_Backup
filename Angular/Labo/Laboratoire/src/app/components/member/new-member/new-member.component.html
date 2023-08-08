@@ -1,0 +1,49 @@
+<section>
+  <h1>Formulaire d'ajout</h1>
+  <form [formGroup]="addForm" (ngSubmit)="addMember()">
+    <div>
+      <label *ngIf="addForm.get('username')?.touched && addForm.get('username')?.errors?.['required']" class="error">Username requis</label>
+      <label *ngIf="existUsernameValue" class="error">Username déjà pris</label>
+      <input type="text" placeholder="Username*" formControlName="username" (blur)="existsUsername()">
+    </div>
+    <div>
+      <label *ngIf="existEmailValue" class="error">Email déjà prise</label>
+      <label *ngIf="addForm.get('email')?.touched && addForm.get('email')?.errors?.['required']" class="error">Email
+        requis</label>
+      <label *ngIf="addForm.get('email')?.touched && addForm.get('email')?.errors?.['email']" class="error">Email non
+        valide</label>
+      <input type="email" placeholder="Email*" formControlName="email" (blur)="existsEmail()">
+    </div>
+    <div>
+      <label *ngIf="addForm.get('birthDate')?.touched && addForm.get('birthDate')?.errors?.['required']" class="error">Date
+        requise</label>
+      <input type="date" placeholder="Date*" formControlName="birthDate">
+    </div>
+    <div>
+      <label *ngIf="addForm.get('elo')?.touched && addForm.get('elo')?.errors?.['required']" class="error">Elo
+        requis</label>
+      <label *ngIf="addForm.get('elo')?.touched && addForm.get('elo')?.errors?.['min']" class="error">Elo minimum :
+        0</label>
+      <label *ngIf="addForm.get('elo')?.touched && addForm.get('elo')?.errors?.['max']" class="error">Elo maximum :
+        3000</label>
+      <input type="number" placeholder="Elo 0-3000*" formControlName="elo" min="0" max="3000">
+    </div>
+    <div>
+      <label *ngIf="addForm.get('gender')?.touched && addForm.get('gender')?.errors?.['required']" class="error">Genre
+        requis</label>
+      <label>
+        <input type="radio" formControlName="gender" value="Female"> Female
+      </label>
+      <label>
+        <input type="radio" formControlName="gender" value="Male"> Male
+      </label>
+      <label>
+        <input type="radio" formControlName="gender" value="Other"> Other
+      </label>
+    </div>
+    <div>
+      <button type="reset">Reset</button>
+      <button type="submit">Ajouter</button>
+    </div>
+  </form>
+</section>

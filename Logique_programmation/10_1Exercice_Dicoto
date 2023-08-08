@@ -1,0 +1,21 @@
+fonction rechercheDicoto(in tab: [],in valeur: N, out position:N)
+    var position : N <- -1
+    var deb <- N:1
+    var milieu <- N
+    var fin <- N : longueur(tab)
+    Tant que debut < fin
+        milieu <- N : (debut+fin) / 2
+        si tab[milieu] < valeur
+            alors
+                debut <- milieu + 1
+            sinon 
+                fin <- milieu
+        finsi
+    fintantque
+
+    si valeur == tab[debut]
+        alors   
+            position = debut
+    finsi
+retourne position
+

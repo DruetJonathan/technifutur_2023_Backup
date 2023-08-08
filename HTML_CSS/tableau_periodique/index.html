@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Curriculim-Vitae</title>
+    <style>
+        td {
+            width: 150px;
+            height: 75px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-weight: bold;
+            position: relative;
+        }
+
+
+
+        span,
+        .atomique {
+            color: black;
+            font-size: 9px;
+        }
+
+        span {
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            right: 0;
+        }
+
+        .atomique {
+
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            left: inherit;
+        }
+
+        .noActive {
+            border: none;
+        }
+
+        .greenBackground {
+            background-color: lime;
+        }
+
+        .redBackground {
+            background-color: rgb(255, 134, 134);
+        }
+
+        .orangeBackground {
+            background-color: rgb(230, 151, 87);
+        }
+
+        .pinkBackground {
+            background-color: palevioletred;
+        }
+
+        .grayBackground {
+            background-color: lightgray;
+        }
+
+        .yellowBackground {
+            background-color: rgb(252, 252, 131);
+        }
+
+        .goldBackground {
+            background-color: rgb(207, 180, 112);
+        }
+
+        .lightPurple {
+            background-color: rgb(252, 166, 252);
+        }
+
+        .darkPurple {
+            background-color: rgb(185, 118, 185);
+        }
+
+        .blueBackground {
+            background-color: rgb(107, 107, 235);
+        }
+
+        .redFont {
+            color: red;
+        }
+
+        .grayFont {
+            color: rgb(119, 118, 118);
+        }
+
+        .blueFont {
+            color: blue;
+        }
+
+        td {
+            transition: all 0.2s ease;
+        }
+    </style>
+    <script>
+        function myFunction(element) {
+            let newOne = document.getElementById(element.id);
+            alert("Symbole: " + newOne.textContent.split(' ')[0] +
+                "\nNuméro Atomique: " + newOne.childNodes[1].textContent +
+                "\nIntitule: " + newOne.childNodes[2].childNodes[0].textContent +
+                "\nMasse Atomique: " + newOne.childNodes[2].childNodes[2].textContent
+
+            );
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mainContainer">
+        <table>
+            <tr>
+                <td id="1" onclick="myFunction(this)" class="greenBackground redFont">H <span
+                        class="atomique">1</span><span>Hydrogène<br />01,01</span>
+                </td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="blueBackground" id="2" onclick="myFunction(this)">HE <span
+                        class="atomique">2</span><span>Hélium <br />4,00</span></td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="3" onclick="myFunction(this)">Li <span
+                        class="atomique">3</span><span>Lithium <br />6,94</span></td>
+                <td class="orangeBackground" id="4" onclick="myFunction(this)">Be <span
+                        class="atomique">4</span><span>Béryllium <br />9,01</span></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="goldBackground" id="5" onclick="myFunction(this)">B <span class="atomique">5</span><span>Bore
+                        <br />10,81</span></td>
+                <td class="greenBackground" id="6" onclick="myFunction(this)">C <span
+                        class="atomique">6</span><span>Carbone<br /> 12,01</span></td>
+                <td class="greenBackground redFont" id="7" onclick="myFunction(this)">N <span
+                        class="atomique">7</span><span>Azote<br /> 14,01</span>
+                </td>
+                <td class="greenBackground redFont" id="8" onclick="myFunction(this)">O <span
+                        class="atomique">8</span><span>Oxygène<br />16,00</span>
+                </td>
+                <td class="yellowBackground redFont" id="9" onclick="myFunction(this)">F <span
+                        class="atomique">9</span><span>Fluor <br />19,00</span>
+                </td>
+                <td class="blueBackground redFont" id="10" onclick="myFunction(this)">NE <span
+                        class="atomique">10</span><span>Néon<br /> 20,18</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="11" onclick="myFunction(this)">Na <span
+                        class="atomique">11</span><span>Sodium<br /> 22,99</span></td>
+                <td class="orangeBackground" id="12" onclick="myFunction(this)">Mg <span
+                        class="atomique">12</span><span>Magnésium<br />24,31</span>
+                </td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="grayBackground" id="13" onclick="myFunction(this)">Al <span
+                        class="atomique">13</span><span>Aluminium<br />26,98</span></td>
+                <td class="goldBackground" id="14" onclick="myFunction(this)">Si <span
+                        class="atomique">14</span><span>Silicium<br />28,09</span></td>
+                <td class="greenBackground" id="15" onclick="myFunction(this)">P <span
+                        class="atomique">15</span><span>Phosphore<br />30,97</span></td>
+                <td class="greenBackground" id="16" onclick="myFunction(this)">S <span
+                        class="atomique">16</span><span>Souffre<br />32,06</span></td>
+                <td class="yellowBackground redFont" id="17" onclick="myFunction(this)">Cl <span
+                        class="atomique">17</span><span>Chlore<br />35,45</span>
+                </td>
+                <td class="blueBackground redFont" id="18" onclick="myFunction(this)">Ar <span
+                        class="atomique">18</span><span>Argon<br />39,95</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="19" onclick="myFunction(this)">K <span
+                        class="atomique">19</span><span>Potassium<br />39,10</span></td>
+                <td class="orangeBackground" id="20" onclick="myFunction(this)">Ca <span
+                        class="atomique">20</span><span>Calcium<br />40,08</span></td>
+                <td class="pinkBackground" id="21" onclick="myFunction(this)">Sc <span
+                        class="atomique">21</span><span>Scandium<br />44,96</span></td>
+                <td class="pinkBackground" id="22" onclick="myFunction(this)">Ti <span
+                        class="atomique">22</span><span>Titane<br />47,87</span></td>
+                <td class="pinkBackground" id="23" onclick="myFunction(this)">V <span
+                        class="atomique">23</span><span>Vanadium<br />50,94</span></td>
+                <td class="pinkBackground" id="24" onclick="myFunction(this)">Cr <span
+                        class="atomique">24</span><span>Chrome<br />52,00</span></td>
+                <td class="pinkBackground" id="25" onclick="myFunction(this)">Mn <span
+                        class="atomique">25</span><span>Manganèse<br />54,94</span></td>
+                <td class="pinkBackground" id="26" onclick="myFunction(this)">Fe <span
+                        class="atomique">26</span><span>Fer<br />55,85</span></td>
+                <td class="pinkBackground" id="27" onclick="myFunction(this)">Co <span
+                        class="atomique">27</span><span>Cobalt<br />58,93</span></td>
+                <td class="pinkBackground" id="28" onclick="myFunction(this)">Ni <span
+                        class="atomique">28</span><span>Nickel<br />58,69</span></td>
+                <td class="pinkBackground" id="29" onclick="myFunction(this)">Cu <span
+                        class="atomique">29</span><span>Cuivre<br />63,55</span></td>
+                <td class="pinkBackground" id="30" onclick="myFunction(this)">Zn <span
+                        class="atomique">30</span><span>Zinc<br />65,41</span></td>
+                <td class="grayBackground" id="31" onclick="myFunction(this)">Ga <span
+                        class="atomique">31</span><span>Gallium<br />69,72</span></td>
+                <td class="goldBackground" id="32" onclick="myFunction(this)">Ge <span
+                        class="atomique">32</span><span>Germanium<br />72,64</span></td>
+                <td class="goldBackground" id="33" onclick="myFunction(this)">As <span
+                        class="atomique">33</span><span>Arsenic<br />74,92</span></td>
+                <td class="greenBackground" id="34" onclick="myFunction(this)">Se <span
+                        class="atomique">34</span><span>Sélénium<br />78,96</span></td>
+                <td class="yellowBackground" id="35" onclick="myFunction(this)">Br <span
+                        class="atomique">35</span><span>Brome<br />79,90</span></td>
+                <td class="blueBackground redFont" id="36" onclick="myFunction(this)">Kr <span
+                        class="atomique">36</span><span>Krypton<br />83,79</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="37" onclick="myFunction(this)">Rb <span
+                        class="atomique">37</span><span>Rubidium<br />85,47</span></td>
+                <td class="orangeBackground" id="38" onclick="myFunction(this)">Sr <span
+                        class="atomique">38</span><span>Strontium<br />87,62</span>
+                </td>
+                <td class="pinkBackground" id="39" onclick="myFunction(this)">Y <span
+                        class="atomique">39</span><span>Yttrium<br />88,91</span></td>
+                <td class="pinkBackground" id="40" onclick="myFunction(this)">Zr <span
+                        class="atomique">40</span><span>Zirconium<br />91,22</span></td>
+                <td class="pinkBackground" id="41" onclick="myFunction(this)">Nb <span
+                        class="atomique">41</span><span>Niobium<br />92,91</span></td>
+                <td class="pinkBackground" id="42" onclick="myFunction(this)">Mo <span
+                        class="atomique">42</span><span>Molybdène<br />95,94</span></td>
+                <td class="pinkBackground" id="43" onclick="myFunction(this)">Tc <span
+                        class="atomique">43</span><span>Technétium<br />(98)</span></td>
+                <td class="pinkBackground" id="44" onclick="myFunction(this)">Ru <span
+                        class="atomique">44</span><span>Ruthénium<br />101,07</span></td>
+                <td class="pinkBackground" id="45" onclick="myFunction(this)">Rh <span
+                        class="atomique">45</span><span>Rhodium<br />102,91</span></td>
+                <td class="pinkBackground" id="46" onclick="myFunction(this)">Pd <span
+                        class="atomique">46</span><span>Palladium<br />106,42</span></td>
+                <td class="pinkBackground" id="47" onclick="myFunction(this)">Ag <span
+                        class="atomique">47</span><span>Argent<br />107,87</span></td>
+                <td class="pinkBackground" id="48" onclick="myFunction(this)">Cd <span
+                        class="atomique">48</span><span>Cadmium<br />112,41</span></td>
+                <td class="grayBackground" id="49" onclick="myFunction(this)">In <span
+                        class="atomique">49</span><span>Indium<br />114,82</span></td>
+                <td class="grayBackground" id="50" onclick="myFunction(this)">Sn <span
+                        class="atomique">50</span><span>Etain<br />118,71</span></td>
+                <td class="goldBackground" id="51" onclick="myFunction(this)">Sb <span
+                        class="atomique">51</span><span>Antimoine<br />121,76</span></td>
+                <td class="goldBackground" id="52" onclick="myFunction(this)">Te <span
+                        class="atomique">52</span><span>Tellure<br />127,60</span></td>
+                <td class="yellowBackground" id="53" onclick="myFunction(this)">I <span
+                        class="atomique">53</span><span>Iode<br />126,90</span></td>
+                <td class="blueBackground redFont" id="54" onclick="myFunction(this)">Xe <span
+                        class="atomique">54</span><span>Xénon<br />131,29</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="55" onclick="myFunction(this)">Cs <span
+                        class="atomique">55</span><span>Césium<br />132,90</span></td>
+                <td class="orangeBackground">Ba <span class="atomique">56</span><span>Baryum<br />137,34</span></td>
+                <td class="lightPurple">52-71</td>
+                <td class="pinkBackground" id="72" onclick="myFunction(this)">Hf <span
+                        class="atomique">72</span><span>Hafnium<br />178,49</span></td>
+                <td class="pinkBackground" id="73" onclick="myFunction(this)">Ta <span
+                        class="atomique">73</span><span>Tantale<br />180,95</span></td>
+                <td class="pinkBackground" id="74" onclick="myFunction(this)">W <span
+                        class="atomique">74</span><span>Tungstène<br />180,95</span></td>
+                <td class="pinkBackground" id="75" onclick="myFunction(this)">Re <span
+                        class="atomique">75</span><span>Rhénium<br />186,21</span></td>
+                <td class="pinkBackground" id="76" onclick="myFunction(this)">Os <span
+                        class="atomique">76</span><span>Osmium<br />190,23</span></td>
+                <td class="pinkBackground" id="77" onclick="myFunction(this)">Ir <span
+                        class="atomique">77</span><span>Iridium<br />192,22</span></td>
+                <td class="pinkBackground" id="78" onclick="myFunction(this)">Pt <span
+                        class="atomique">78</span><span>Platine<br />195,09</span></td>
+                <td class="pinkBackground" id="79" onclick="myFunction(this)">Au <span
+                        class="atomique">79</span><span>Or<br />196,97</span></td>
+                <td class="pinkBackground blueFont" id="80" onclick="myFunction(this)">Hg <span
+                        class="atomique">80</span><span>Mercure<br />200,59</span>
+                </td>
+                <td class="grayBackground" id="81" onclick="myFunction(this)">Tl <span
+                        class="atomique">81</span><span>Thallium<br />204,38</span></td>
+                <td class="grayBackground" id="82" onclick="myFunction(this)">Pb <span
+                        class="atomique">82</span><span>Plomb<br />207,19</span></td>
+                <td class="grayBackground" id="83" onclick="myFunction(this)">Bi <span
+                        class="atomique">83</span><span>Bismuth<br />208,98</span></td>
+                <td class="grayBackground" id="84" onclick="myFunction(this)">Po <span
+                        class="atomique">84</span><span>Polonium<br />(209)</span></td>
+                <td class="yellowBackground" id="85" onclick="myFunction(this)">At <span
+                        class="atomique">85</span><span>Astate<br />(210)</span></td>
+                <td class="blueBackground redFont" id="86" onclick="myFunction(this)">Rn <span
+                        class="atomique">86</span><span>Radon<br />(222)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="redBackground" id="87" onclick="myFunction(this)">Fr <span
+                        class="atomique">87</span><span>Francium<br />(223)</span></td>
+                <td class="orangeBackground" id="88" onclick="myFunction(this)">Ra <span
+                        class="atomique">88</span><span>Radium<br />(226)</span></td>
+                <td class="darkPurple">89-103</td>
+                <td class="pinkBackground grayFont" id="104" onclick="myFunction(this)">Rf <span
+                        class="atomique">104</span><span>Rutherfordium<br />(267)</span></td>
+                <td class="pinkBackground grayFont" id="105" onclick="myFunction(this)">Db <span
+                        class="atomique">105</span><span>Dubnium<br />268</span>
+                </td>
+                <td class="pinkBackground grayFont" id="106" onclick="myFunction(this)">Sg <span
+                        class="atomique">106</span><span>Seaborgium<br />(267)</span></td>
+                <td class="pinkBackground grayFont" id="107" onclick="myFunction(this)">Bh <span
+                        class="atomique">107</span><span>Bohrium<br />(272)</span>
+                </td>
+                <td class="pinkBackground grayFont" id="108" onclick="myFunction(this)">Hs <span
+                        class="atomique">108</span><span>Hassium<br />(270)</span>
+                </td>
+                <td class="pinkBackground grayFont" id="109" onclick="myFunction(this)">Mt <span
+                        class="atomique">109</span><span>Meitnérium<br />(276)</span></td>
+                <td class="pinkBackground grayFont" id="110" onclick="myFunction(this)">Ds <span
+                        class="atomique">110</span><span>Darmstadtium<br />(281)</span></td>
+                <td class="pinkBackground grayFont" id="111" onclick="myFunction(this)">Rg <span
+                        class="atomique">111</span><span>Roentgenium<br />(280)</span></td>
+                <td class="pinkBackground grayFont" id="112" onclick="myFunction(this)">Cn <span
+                        class="atomique">112</span><span>Copernicium<br />(285)</span></td>
+                <td class="grayBackground grayFont" id="113" onclick="myFunction(this)">Uut <span
+                        class="atomique">113</span><span>Ununtrium<br />(284)</span></td>
+                <td class="grayBackground grayFont" id="114" onclick="myFunction(this)">Fl <span
+                        class="atomique">114</span><span>Flérovium<br />(289)</span>
+                </td>
+                <td class="grayBackground grayFont" id="115" onclick="myFunction(this)">Uup <span
+                        class="atomique">115</span><span>Ununpentium<br />(288)</span></td>
+                <td class="grayBackground grayFont" id="116" onclick="myFunction(this)">Lv <span
+                        class="atomique">116</span><span>Livermorium<br />(293)</span></td>
+                <td class="yellowBackground grayFont" id="117" onclick="myFunction(this)">Uus <span
+                        class="atomique">117</span><span>Ununseptium<br />(294)</span></td>
+                <td class="blueBackground grayFont" id="118" onclick="myFunction(this)">Uuo <span
+                        class="atomique">118</span><span>Ununoctium<br />(294)</span></td>
+            </tr>
+            <tr>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+            </tr>
+            <tr>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="lightPurple" id="57" onclick="myFunction(this)">La <span
+                        class="atomique">57</span><span>Lanthane<br />138,91</span></td>
+                <td class="lightPurple" id="58" onclick="myFunction(this)">Ce <span
+                        class="atomique">58</span><span>Cérium<br />140,12</span></td>
+                <td class="lightPurple" id="59" onclick="myFunction(this)">Pr <span
+                        class="atomique">59</span><span>Praséodyme<br />140,91</span></td>
+                <td class="lightPurple" id="60" onclick="myFunction(this)">Nd <span
+                        class="atomique">60</span><span>Néodyme<br />144,24</span></td>
+                <td class="lightPurple" id="61" onclick="myFunction(this)">Pm <span
+                        class="atomique">61</span><span>Prométhéum<br />(145)</span></td>
+                <td class="lightPurple" id="62" onclick="myFunction(this)">Sm <span
+                        class="atomique">62</span><span>Samarium<br />150,36</span></td>
+                <td class="lightPurple" id="63" onclick="myFunction(this)">Eu <span
+                        class="atomique">63</span><span>Europium<br />151,96</span></td>
+                <td class="lightPurple" id="64" onclick="myFunction(this)">Gd <span
+                        class="atomique">64</span><span>Gadolinium<br />157,25</span></td>
+                <td class="lightPurple" id="65" onclick="myFunction(this)">Tb <span
+                        class="atomique">65</span><span>Terbium<br />158,92</span></td>
+                <td class="lightPurple" id="66" onclick="myFunction(this)">Dy <span
+                        class="atomique">66</span><span>Dysprosium<br />162,50</span></td>
+                <td class="lightPurple" id="67" onclick="myFunction(this)">Ho <span
+                        class="atomique">67</span><span>Holmium<br />164,93</span></td>
+                <td class="lightPurple" id="68" onclick="myFunction(this)">Er <span
+                        class="atomique">68</span><span>Erbium<br />167,26</span></td>
+                <td class="lightPurple" id="69" onclick="myFunction(this)">Tm <span
+                        class="atomique">69</span><span>Thulium<br /></span></td>
+                <td class="lightPurple" id="70" onclick="myFunction(this)">Yb <span
+                        class="atomique">70</span><span>Ytterbium<br />173,04</span></td>
+                <td class="lightPurple" id="71" onclick="myFunction(this)">Lu <span
+                        class="atomique">71</span><span>Lutécium<br />174,97</span></td>
+            </tr>
+            <tr>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="noActive"></td>
+                <td class="darkPurple" id="89" onclick="myFunction(this)">Ac <span
+                        class="atomique">89</span><span>Actinium<br />(227)</span></td>
+                <td class="darkPurple" id="90" onclick="myFunction(this)">Th <span
+                        class="atomique">90</span><span>Thorium<br />232,04</span></td>
+                <td class="darkPurple" id="91" onclick="myFunction(this)">Pa <span
+                        class="atomique">91</span><span>Protactinium<br />231,04</span></td>
+                <td class="darkPurple" id="92" onclick="myFunction(this)">U <span
+                        class="atomique">92</span><span>Uranium<br />238,03</span></td>
+                <td class="darkPurple" id="93" onclick="myFunction(this)">Np <span
+                        class="atomique">93</span><span>Neptunium<br />(237)</span></td>
+                <td class="darkPurple" id="94" onclick="myFunction(this)">Pu <span
+                        class="atomique">94</span><span>Plutonium<br />244,06</span></td>
+                <td class="darkPurple" id="95" onclick="myFunction(this)">Am <span
+                        class="atomique">95</span><span>Americium<br />(243)</span></td>
+                <td class="darkPurple" id="96" onclick="myFunction(this)">Cm <span
+                        class="atomique">96</span><span>Curium<br />(247)</span></td>
+                <td class="darkPurple" id="97" onclick="myFunction(this)">Bk <span
+                        class="atomique">97</span><span>Berkélium<br />(247)</span></td>
+                <td class="darkPurple" id="98" onclick="myFunction(this)">Cf <span
+                        class="atomique">98</span><span>Califormium<br />(251)</span></td>
+                <td class="darkPurple" id="99" onclick="myFunction(this)">Es <span
+                        class="atomique">99</span><span>Einsteinium<br />(252)</span></td>
+                <td class="darkPurple" id="100" onclick="myFunction(this)">Fm <span
+                        class="atomique">100</span><span>Fermium<br />(257)</span></td>
+                <td class="darkPurple" id="101" onclick="myFunction(this)">Md <span
+                        class="atomique">101</span><span>Meindélévium<br />(258)</span></td>
+                <td class="darkPurple" id="102" onclick="myFunction(this)">No <span
+                        class="atomique">102</span><span>Nobélium<br />(259)</span></td>
+                <td class="darkPurple" id="103" onclick="myFunction(this)">Lr <span
+                        class="atomique">103</span><span>Lawrencium<br />(262)</span></td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+</html>

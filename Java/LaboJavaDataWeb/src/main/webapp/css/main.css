@@ -1,0 +1,280 @@
+header{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    background: linear-gradient(#2c3e50,transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 150px;
+}
+nav div a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.15em;
+    padding: 2%;
+    font-family: "Arial Black", serif;
+}
+nav div{
+    width: 250px;
+}
+#logo{
+    width: 125px;
+    margin: 20%;
+    filter: brightness(0) invert(1);
+}
+header video {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+#loginForm{
+    height: 300px;
+}
+#registerForm{
+    height: 600px;
+}
+#loginForm,#registerForm,.gameForm,.requestCoachingForm{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 400px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.38);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.6px);
+    -webkit-backdrop-filter: blur(12.6px);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    padding: 2%;
+    margin: 2%;
+}
+#loginForm input,#registerForm input,.gameForm input,.requestCoachingForm input{
+    margin: 2%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 90%;
+    background-color: transparent;
+
+}
+#loginForm button,#registerForm button,.gameForm button,.requestCoachingForm button{
+    padding: 15px;
+    border: 2px solid black;
+    width: 90%;
+    margin: 15px;
+    font-family: "Arial Black", serif;
+    background-color: lightblue;
+}
+#loginForm label ,#registerForm label,#gameForm label{
+    margin: 2%;
+    font-family: "Arial Black", serif;
+}
+
+#loginForm a,#registerForm a,.gameForm a{
+    display: flex;
+    align-self: center;
+    color: blue;
+}
+textarea {
+    resize: none;
+    width: 100%;
+    height: 300px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid black;
+    padding: 2%;
+}
+.requestCoachingForm select{
+    width: 100%;
+    margin: 2%;
+}
+#loginArticle,#registerArticle,#gameArticle,#requestCoachingArticle{
+    width: 100%;
+    /*height: 100vh;*/
+    max-height: 100%;
+    /*overflow-y: auto;*/
+    display: flex;
+    justify-content: center;
+    /*flex-direction: column;*/
+    background-image: url("../images/wallpaper01.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 200px;
+    padding-bottom: 100px;
+
+}
+#requestCoachingArticle{
+    overflow: scroll;
+    flex-direction: column;
+}
+/* card */
+.card{
+    /*background-color: #aa8fd8;*/
+}
+.card-body{
+    background: rgba(255, 255, 255, 0.81);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    word-break: break-all;
+    padding: 4px;
+    margin: 15px;
+    height: 650px;
+    width: calc(100%/4);
+}
+.card-image{
+    height: 214px;
+    background-size: cover;
+}
+.card-price{
+    position: absolute;
+    top: 2%;
+    right: -1%;
+    padding: 2%;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.81);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.card-title{
+    text-align: center;
+    color:inherit;
+    color: black;
+}
+.card-description{
+    padding: 0 2%;
+}
+.card-buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-buttonDiv form{
+    width: calc(100%/3);
+    margin: 10px;
+}
+.card-buttonDiv button {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid #aa8fd8;
+    transition: all 0.3s ease;
+}
+.card-buttonDiv button:hover {
+    background-color: #aa8fd8;
+    color: white;
+    transition: all 0.3s ease;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #000000, #0d080b, #151015, #19161d, #1b1c25, #1f232f, #232b39, #253344, #2e3f53, #374b63, #415873, #4b6584);
+
+}
+/**/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-spacing: 0;
+    /*height: 200px;*/
+    margin-top: 25px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    /*border-bottom: 1px solid #ddd;*/
+    border:1px solid black;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+h2{
+    color:white;
+    padding-top: 25px;
+}
+#linkDIV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cardDIV{
+    display: flex;
+    justify-content: center;
+
+}
+.gameMngmnt, .requestCoachingMngmnt{
+    font-size: 20px;
+    width: 40%;
+    text-align: center;
+    border: solid black;
+    padding: 25px;
+    margin-top: 25px;
+    /*color:  inherit;*/
+    /*color: white;*/
+    background-color: rgba(255,255,255,0.6);
+    color: white;
+
+}
+
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+        border-bottom: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+
+    td::before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-column);
+        color: #000000;
+        font-weight: bold;
+    }
+}
+.accept button,.decline button{
+    width: 80%;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+.accept button{
+    background-color: #76c476;
+}
+.decline button{
+    background-color: #b35353;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/global.css">
+</head>
+<body>
+    <input type="text">
+    <div id="pouet" class="blue"> Déjà du contenu </div>
+    
+    <div>
+        <button onclick="afficherPouet()">Pouet 2</button>
+    </div>
+
+    <img id="img-pouet" src="" alt="Pouet pouet">
+
+    <ul>
+        <li>Elem 1</li>
+        <li class="blue">Elem 2</li>
+        <li>Elem 3</li>
+        <li class="blue">Elem 4</li>
+        <li>Elem 5</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Jour Semaine</th>
+                <th>Repas Midi</th>
+                <th>Repas Soir</th>
+            </tr>
+        </thead>
+        <tbody id='tab-content'>
+
+        </tbody>
+    </table>
+
+    <div id="poti-blagueur" class="popup hidden">
+        <p id="close">X</p>
+        <img src="https://pbs.twimg.com/media/D8Pe6B7UIAAok78.jpg" alt="pouet pouet je suis un poti blagueur">
+        <h1 id="blague" class="red">Pouet pouet je suis un potiblagueur et j'ai fait <span id="nb-blague">0</span> blague(s)</h1>
+    </div>
+
+    <!-- Ou dans le head avec l'attribut defer -->
+    <script src="./main.js"></script>
+</body>
+</html>

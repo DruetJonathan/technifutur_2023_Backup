@@ -1,0 +1,15 @@
+<div *ngIf="trainer" class="card" [ngClass]="{boy: trainer.gender === 'm', girl : trainer.gender === 'f'}">
+
+    <div *ngIf="trainer.project">
+        <h5>{{trainer.firstname}} {{trainer.lastname}}</h5>
+        <img [src]="trainer.avatar" [alt]=" 'avatar de ' + trainer.firstname">
+        <p>Non disponible : Sur projet</p>
+    </div>
+
+    <div *ngIf="!trainer.project">
+        <h5>{{trainer.firstname}} {{trainer.lastname}}</h5>
+        <img [src]="trainer.avatar" [alt]=" 'avatar de ' + trainer.firstname">
+        <p> {{ trainer.birthdate | date : 'dd/MM/yyyy'}} </p>
+        <button [disabled]="trainer.vacation" class="btn" (click)="chooseTrainer()">Choisir ce formateur</button>
+    </div>
+</div>

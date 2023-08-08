@@ -1,0 +1,9 @@
+<h2>Le panier</h2>
+<div class="chapter">
+    <div>
+        <input type="text" placeholder="Nom du produit" [(ngModel)]="nameToAdd">
+        <button (click)="addProduct()" class="btn">Ajouter</button>
+    </div>
+
+    <app-exo2enfant [listToShow]="productList" (deleteEvent)="deleteProduct($event)" (downEvent)="downQtyProduct($event)" (upEvent)="upQtyProduct($event)"></app-exo2enfant>
+</div>

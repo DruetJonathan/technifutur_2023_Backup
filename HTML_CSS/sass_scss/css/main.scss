@@ -1,0 +1,8 @@
+$count: 0.25;
+
+@for $i from 1 through 10 {
+    #main-content>ul>li:nth-child(#{$i}) {
+        animation-delay: #{$count*$i}s;
+
+    }
+}

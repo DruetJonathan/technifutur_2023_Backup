@@ -1,0 +1,49 @@
+{
+  "burgers": [
+    {
+      "id": 1,
+      "name": "montagnard",
+      "ingredients": [
+        "boeuf",
+        "bun",
+        "fromage"
+      ],
+      "price": "12",
+      "picture": "https://www.sherpa.net/sites/default/files/recette/burger.jpg",
+      "available": true
+    },
+    {
+      "name": "montagnard",
+      "ingredients": [
+        "boeuf",
+        "bun",
+        "fromage"
+      ],
+      "price": "12",
+      "picture": "https://www.sherpa.net/sites/default/files/recette/burger.jpg",
+      "available": true,
+      "id": 2
+    },
+    {
+      "name": "burger de burger",
+      "price": 15,
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/640px-Hamburger_%28black_bg%29.jpg",
+      "available": true,
+      "ingredients": [
+        "burger"
+      ],
+      "id": 3
+    },
+    {
+      "name": "burger de burger",
+      "price": 13,
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hamburger_%28black_bg%29.jpg/640px-Hamburger_%28black_bg%29.jpg",
+      "available": true,
+      "ingredients": [
+        "burger"
+      ],
+      "id": 4
+    }
+  ],
+  "users": []
+}

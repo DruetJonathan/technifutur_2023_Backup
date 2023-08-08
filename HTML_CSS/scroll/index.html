@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        html {
+            /*scroll-behavior: smooth;*/
+
+        }
+
+        body {
+            margin: 0;
+            overflow-y: hidden;
+        }
+
+        section {
+            height: 100vh;
+            transform: translateX(-100vw);
+            transition: all 1s ease;
+            position: absolute;
+            z-index: 1;
+            width: 100vw;
+        }
+
+        section:target {
+            transform: translateX(0);
+            z-index: 2;
+        }
+
+        ul {
+            position: fixed;
+            z-index: 1000;
+        }
+
+
+
+        #section1 {
+            background-color: darkcyan;
+        }
+
+
+        #section2 {
+            background-color: dimgray;
+
+        }
+
+        #section3 {
+            background-color: cadetblue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#section1">section 1</a></li>
+        <li><a href="#section2">section 2</a></li>
+        <li><a href="#section3">section 3</a></li>
+    </ul>
+    <section id="section1"></section>
+    <section id="section2"></section>
+    <section id="section3"></section>
+</body>
+
+</html>

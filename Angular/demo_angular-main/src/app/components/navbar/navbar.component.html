@@ -1,0 +1,39 @@
+<!-- <header>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Accueil</a></li>
+            <li>
+                <a routerLink="/demo">Demos</a>
+                <ul>
+                    <li><a routerLink="/demo/demo1">Demo 1 - Bindings</a></li>
+                    <li><a routerLink="/demo/demo2">Demo 2 - Les Pipes</a></li>
+                    <li><a routerLink="/demo/demo3">Demo 3 - Les Directives</a></li>
+                </ul>
+            </li>
+        
+            <li>
+                <a routerLink="/exo">Exos</a>
+                <ul>
+                    <li><a routerLink="/exo/exo1">Exercice 1 - Chrono</a></li>
+                </ul>
+            </li>
+
+            <li> <a routerLink="/rappels">Rappels</a> </li>
+        </ul>
+    </nav>
+</header> -->
+
+<header>
+    <nav>
+        <ul>
+            <li *ngFor="let link of navLinks">
+                <a [ngClass]="{isActive: link.isVisible}" (click)="toggleVisible(link)" [routerLink]="link.url">{{link.title}}</a>
+                <ul *ngIf="link.children && link.isVisible">
+                    <li *ngFor="let child of link.children">
+                        <a [routerLink]="child.url">{{child.title}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>

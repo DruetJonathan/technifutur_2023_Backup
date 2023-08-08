@@ -1,0 +1,77 @@
+header{
+  background-color: #326fd1;
+  margin: 0;
+  padding: 0px 15px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  h1{
+    font-family: Raleway,sans-serif;
+    font-size: 20px;
+  }
+  #containerBurger{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    #bar1,#bar2,#bar3{
+      height: 5px;
+      width: 35px;
+      background-color: white;
+      margin: 5px;
+    }
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}
+#leftMenu{
+
+  z-index:999;
+  position: absolute;
+  background: #282e38;
+  color: #fff;
+  width: 300px;
+  transition:all 0.3s ease;
+  height: 90vh;
+  ul{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    li{
+      a{
+        text-decoration:none;
+        color: white;
+      }
+      list-style-type: none;
+      width: 100%;
+      background-color: #212121;
+      padding: 15px;
+      box-sizing: border-box;
+      #sousList{
+        border-left: 2px solid white;
+        width: 70%;
+        margin: 15px 40px;
+        transition: all 0.3s ease;
+        li{
+          margin: 5px;
+        }
+      }
+    }
+  }
+}
+.isVisible{
+  transform:inherit;
+  transform: translateX(0);
+}
+.notVisible{
+  transform: translateX(-330px);
+}
+div{
+  a{
+    margin: 10px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,10 @@
+✔ Créer une tâche @done(23-06-15 16:14)
+    ✘ Sous tâche de tâche @cancelled(23-06-15 16:15)
+    ✔ Sous tâche bis @started(23-06-15 16:15) @done(23-06-15 16:15) @lasted(59s)
+    ✘ Sous tâche annulée @started(23-06-15 16:16) @cancelled(23-06-15 16:16) @wasted(35s)
+
+☐ Alt + Enter -> Créer une tâche
+☐ Alt + D -> Done (Finir la tâche)
+☐ Alt + C -> Cancel
+☐ Alt + S -> Start
+// TODO+ de Fabio

@@ -1,0 +1,14 @@
+<h2>Page de login :</h2>
+<div class="chapter">
+    <div *ngIf="!connectedUser">
+        <input type="text" placeholder="Entrez votre pseudo ou email" [(ngModel)]="login" >
+        <input type="password" placeholder="Entrez votre mot de passe" [(ngModel)]="password">
+        <button (click)="connect()" class="btn">Se connecter</button>
+    </div>
+
+
+    <div *ngIf="connectedUser">
+        <p> Hello {{ connectedUser.firstname}} !</p>
+        <button (click)="disconnect()" class="btn">Se déconnecter</button>
+    </div>
+</div>

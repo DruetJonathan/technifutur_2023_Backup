@@ -1,0 +1,10 @@
+<h2>Détails de : {{fanSerie.nom}}</h2>
+<div class="chapter">
+  <a routerLink="/exos/exo5">Retour</a>
+  <p>Nom :{{fanSerie.nom}}</p>
+  <p>Date de naissance :{{fanSerie.ddn | date :'dd/MM/YYYY'}}</p>
+  <p>Liste des series</p>
+  <ul>
+    <li *ngFor="let serie of fanSerie.series">{{serie}}</li>
+  </ul>
+</div>

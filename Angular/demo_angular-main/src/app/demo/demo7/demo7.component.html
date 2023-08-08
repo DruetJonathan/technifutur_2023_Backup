@@ -1,0 +1,35 @@
+<h2>Demo Routing - Crud</h2>
+<div class="chapter">
+    <h3>Liste des sons : </h3>
+    <div class="mb-2">
+        <a class="btn" routerLink="/demo/demo7/create-track">Ajouter un nouveau son</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Durée</th>
+                <th>Album</th>
+                <th>Genre</th>
+                <th>Artiste(s)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let track of listTrack">
+                <td>{{ track.title }}</td>
+                <td>{{ track.duration | convertTime : 'short' }} </td>
+                <td>{{ track.album ?? "✖"}}</td>
+                <td>{{ track.genre }}</td>
+                <td>
+                    <span *ngFor="let artist of track.artists">{{artist}}</span>
+
+                </td>
+                <td>
+                    <button class="btn">📝</button>
+                    <button (click)="delete(track.id)" class="btn">❌</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

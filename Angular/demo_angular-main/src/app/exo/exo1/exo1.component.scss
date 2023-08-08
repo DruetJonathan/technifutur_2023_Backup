@@ -1,0 +1,13 @@
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    * {
+        margin-bottom: 2rem;
+    }
+}
+
+.chrono {
+    font-size: 3rem;
+}

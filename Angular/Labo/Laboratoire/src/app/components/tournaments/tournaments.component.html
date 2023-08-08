@@ -1,0 +1,68 @@
+<section>
+  <div id="divSearch">
+
+    <h4>Formulaire de recherche</h4>
+    <form [formGroup]="searchForm" (ngSubmit)="updateTournamentList()">
+      <input type="text" placeholder="Nom" formControlName="name">
+      <select formControlName="category">
+        <optgroup label="Selectionnez Categorie">
+          <option value="" disabled selected hidden>Selectionnez Categorie</option>
+          <option value="{{enum.value}}" *ngFor="let enum of TournamentCategory | keyvalue">{{enum.value}}</option>
+        </optgroup>
+      </select>
+      <div>
+<!--        todo faire les checkbox-->
+        <div *ngFor="let enum of TournamentStatus |keyvalue;let i = index">
+          <input type="checkbox" formControlName="status{{i}}" value="{{enum.value}}" id="status{{i}}">
+          <label for="status{{i}}">{{enum.value}}</label>
+        </div>
+      </div>
+      <div>
+        <label for="womenOnly">Réservé aux filles</label>
+        <input type="checkbox" formControlName="womenOnly" id="womenOnly">
+      </div>
+      <div id="divButton">
+        <button type="reset">Reset</button>
+        <button type="submit">Rechercher</button>
+      </div>
+    </form>
+    <div >
+      <a routerLink="/tournaments/add" class="newButton" *ngIf="isAdmin">Nouveau Tournoi</a>
+    </div>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Location</th>
+      <th>Categories</th>
+      <th>Elo</th>
+      <th>Statuts</th>
+      <th>Fin des inscriptions</th>
+      <th>Joueurs</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody *ngIf="listTournaments">
+    <tr *ngFor="let tournaments of listTournaments.results; let ind = index">
+      <td>{{tournaments.name}}</td>
+      <td>{{tournaments.location}}</td>
+      <td>
+        <p class="categories" *ngFor="let catego of tournaments.categories">{{catego.toString()}}</p>
+      </td>
+      <td>{{tournaments.eloMin === null ? 0: tournaments.eloMin}}-{{tournaments.eloMax === null ? 3000: tournaments.eloMax}}</td>
+      <td>{{tournaments.status}}</td>
+      <td>{{tournaments.endOfRegistrationDate | date: 'dd/MM/yyyy' }}</td>
+      <td>{{tournaments.minPlayers}} / {{tournaments.maxPlayers}}</td>
+      <td class="action">
+        <a routerLink="{{tournaments.id}}">Details</a>
+        <a routerLink="" *ngIf="isConnected">S'inscrire</a>
+<!--        <a routerLink="">Se désinscrire</a>-->
+        <a (click)="deleteTournament(tournaments.id)" *ngIf="isAdmin">Supprimer</a>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+</section>

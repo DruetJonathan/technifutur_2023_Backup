@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./main.js" defer></script> 
+</head>
+<body>
+
+    <div id="test">Bonjour</div>
+    
+    <!-- Trois endroits pour écrire le code JS : -->
+    <!-- Premier (A EVITER) → Directement dans un event HTML -->
+    <button onclick="console.log('Touché !')">Click Me</button>
+    
+    <!-- Deuxième → Metter le code dans une balise script -->
+    <script>
+        let prenom = "Aude";
+        console.log("Wesh zalu " + prenom);
+    </script>
+
+    <!-- Troisième (A PRIVILEGIER) → Un script avec src qui contient le chemin vers votre (vos) fichier(s) js -->
+    <!-- Soit tout à la fin du body -->
+    <!-- <script src="./main.js"></script>  -->
+    <!-- Soit dans le head avec l'attribut defer -->
+    <!-- La page est exécutée séquentiellement de haut en bas, si le HTML n'a pas encore été chargé, le js qui essaie de le récupérer va planter
+    defer indique que le script doit être chargé après création du code HTML -->
+
+    <!-- Si jamais la personne a désactivé l'éxécution du Js sur son navigateur : Affichera le message écrit en dessous -->
+    <!-- Devient de plus en plus rare, on ne la rencontre plus dans les projets récents -->
+    <noscript>Attention ! Vous avez désactivé le JavaScript et nous en avons besoin sur notre page</noscript>
+</body>
+</html>

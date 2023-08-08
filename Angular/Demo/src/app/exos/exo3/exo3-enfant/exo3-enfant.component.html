@@ -1,0 +1,28 @@
+<div class="productContainer">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="productList.length > 0">
+            <tr *ngFor="let product of productList">
+                <td>{{product.productName}}</td>
+                <td>
+                    <button (click)="down(product)">
+                        ➖
+                    </button>
+                    {{product.quantity}}
+                    <button (click)="up(product)">
+                        ➕
+                    </button>
+                </td>
+                <td>
+                    <button (click)="delete(product)">⛔</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

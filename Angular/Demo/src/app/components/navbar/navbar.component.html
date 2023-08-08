@@ -1,0 +1,22 @@
+<header>
+    <nav>
+      <div>
+        <p *ngIf="!connectedUser">Bienvenu(e)</p>
+        <p *ngIf="connectedUser">Bonjour {{connectedUser.lastname}} {{connectedUser.firstname}}</p>
+        <a routerLink="/demo/demo5" *ngIf="!connectedUser">Se connecter</a>
+        <button *ngIf="connectedUser" (click)="disconnect()">Se déconnecter</button>
+      </div>
+        <ul>
+            <li *ngFor="let link of links;let i = index">
+                <a [ngClass]="{isActive : link.isVisible}" (click)="toggleShowLink(i)"
+                    routerLink="{{link.url}}">{{link.title}}</a>
+                <ul *ngFor="let linkChildren of link.children" class="sousList">
+                    <li *ngIf="link.isVisible">
+                        <a routerLink="{{linkChildren.url}}">{{linkChildren.title}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+</header>

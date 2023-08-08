@@ -1,0 +1,42 @@
+<h2>Demo 8 - HttpClient</h2>
+<div class="chapter">
+  <p>Ne pas oublier d'importer HttpClientModule dans le module où on veut utiliser HttpClient -> SharedModule</p>
+  <div>
+    <h3>Prédire âge</h3>
+    <input type="text" placeholder="Nom" [(ngModel)]="nameAge">
+    <select [(ngModel)]="countryCodeAge">
+      <option value="">Choisissez un pays</option>
+      <option value="FR">France</option>
+      <option value="BE">Belgique</option>
+      <option value="US">Etats-Unis</option>
+    </select>
+    <button class="btn" (click)="predireAge()">Prédire Age</button>
+    <div *ngIf="age">
+      Vous avez probablement {{age.age}} ans pour le code pays {{age.country_id}}. Basé sur {{age.count}} résultats
+    </div>
+  </div>
+  <div>
+    <h3>Prédire Genre</h3>
+    <input type="text" placeholder="Nom" [(ngModel)]="nameGenre">
+    <select [(ngModel)]="countryCodeGenre">
+      <option value="">Choisissez un pays</option>
+      <option value="FR">France</option>
+      <option value="BE">Belgique</option>
+      <option value="US">Etats-Unis</option>
+    </select>
+    <button class="btn" (click)="predireGenre()">Prédire Genre</button>
+    <div *ngIf="genre">
+      Vous êtes probablement {{genre.gender === 'male' ? 'Homme':'Femme'}}  pour le code pays {{genre.country_id}}.Basé sur {{genre.count}} résultats. ({{genre.probability * 100}} => probability)
+    </div>
+  </div>
+  <div>
+    <h3>Prédire nationaloités</h3>
+    <input type="text" placeholder="Nom" [(ngModel)]="nameNationality">
+    <button class="btn" (click)="predireNationalite()">Prédire nationalitées</button>
+    <div *ngIf="nationality">
+      <ul>
+        <li *ngFor="let country of nationality.country">{{getValueCountry(country.country_id)}} => Proba: {{country.probability | number : '0.1-1'}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

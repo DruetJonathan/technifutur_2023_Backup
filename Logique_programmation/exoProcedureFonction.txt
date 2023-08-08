@@ -1,0 +1,11 @@
+fonction recherche(in valeur:n,in taille:n, in tab: N[]) : N
+
+Procedure afficherMoitieChaine(in chaine : T)
+
+fonction existInText(in mot : T, in texte: T) : B
+
+fonction existInText(in mot : T, in texte: T, out position: N) : B
+
+fonction calculerDifferenceDeuxDate(in dateUne: Date, in dateDeux) : N
+
+procedure addNbJour(in/out date: Date, in nbJour)

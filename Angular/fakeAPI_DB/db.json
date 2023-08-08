@@ -1,0 +1,38 @@
+ {
+    "users" : [
+        {
+            "id": 1,
+            "lastname" : "Onyme",
+            "firstname" : "Anne",
+            "pseudo" : "Anonyme",
+            "email" : "anne.onyme@monsite.be",
+            "password" : "Test1234=",
+            "role" : "Admin"
+        }
+    ],
+    "categories" : [
+        {
+            "id" : 1,
+            "name" : "Cuisine",
+            "icon" : "👨‍🍳"
+        },
+        {
+            "id" : 1,
+            "name" : "Jardinage",
+            "icon" : "👨‍🌾"
+        }
+    ],
+    "tasks" : [
+        {
+            "id" : 1,
+            "name" : "Faire une bolo pour 15 personnes",
+            "category" : 1,
+            "description" : "Y'a toute la mif qui vient, faut leur faire à manger",
+            "from" : 1,
+            "to" : 1,
+            "beginDate" : "2023-07-08T10:00",
+            "endingDate" : "2023-07-08T12:00",
+            "realEndingDate" : "null"
+        }
+    ]
+}

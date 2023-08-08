@@ -1,0 +1,45 @@
+<h2>P'tit formulaire</h2>
+<div class="chapter">
+    <h3>Ajouter une chanson :</h3>
+    <form [formGroup]="trackForm" (submit)="addTrack()">
+        <div>
+            <input type="text" placeholder="Titre de la chanson" formControlName="title">
+            <span *ngIf="trackForm.get('title')?.touched && trackForm.get('title')?.errors?.['required']" class="error">Ce champs est requis</span>
+        </div>
+        <div>
+            <input type="number" placeholder="Durée de la chanson" formControlName="duration">
+            <span *ngIf="trackForm.get('duration')?.touched && trackForm.get('duration')?.errors?.['required']" class="error">Ce champs est requis</span>
+            <span *ngIf="trackForm.get('duration')?.errors?.['min'] || trackForm.get('duration')?.errors?.['max']" class="error">Min 0 - Max 600</span>
+        </div>
+        <div>
+            <input type="text" placeholder="Album" formControlName="album">
+        </div>
+        <div>
+            <select formControlName="genre">
+                <option value="" hidden>Choisissez un genre</option>
+                <option value="rock">Rock</option>
+                <option value="rap">Rap</option>
+                <option value="rai">Raï</option>
+                <option value="metal">Métal</option>
+                <option value="polopitre">🤡 PoloPitre 🎂</option>
+            </select>
+            <span *ngIf="trackForm.get('genre')?.touched && trackForm.get('genre')?.errors?.['required']" class="error">Ce champs est requis</span>
+        </div>
+        
+        <div formArrayName="artists">
+            <h4>Ajouter un artiste :</h4>
+            <input class="btn mb-1" type="button" value="Ajouter un artiste" (click)="addArtist()">
+
+            <div *ngFor="let artist of artists.controls; let i = index">
+                <input type="text" [placeholder]=" 'Artiste N°' + (i+1) " [formControlName]="i">
+
+                <span (click)="removeArtist(i)">X</span>
+            </div>
+        </div>
+
+
+        <div>
+            <input class="btn" type="submit" value="Ajouter la chanson">
+        </div>
+    </form>
+</div>

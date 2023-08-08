@@ -1,0 +1,140 @@
+-------------------
+ajouterValeur(in valeur: N, in l:list):list
+    // creation nouvelle valeur
+    nouvelleValeur <- creer list
+    nouvelleValeur.valeur = valeur
+    --------------
+    // bouclage pour arriver au dernier elements
+    temp <- l
+    cpt <- 0
+    tant que temp <> null
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    // ajout de temp a la derniere cellule
+    temp.suivant <- nouvelleValeur
+    retourne l
+-------------------
+ajouterDebut(in valeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    temp <- creer list
+    temp.valeur = valeur
+    temp.suivant = l
+    retourne l
+-------------------
+inserer(valeur:N, l:list,position:N):list
+    si position == 0
+        alors
+            ajouterDebut(valeur,l)
+    sinon
+        // creation de ma nouvelle cellule
+        temp <- creer list
+        temp.valeur = valeur
+        ------
+        // je parcours la liste existante
+        parcourList <- l
+        cpt <- 0
+        tant que cpt < position - 1
+            parcourList <- parcourList suivant
+            cpt <- cpt + 1
+        fintantque
+        -------
+        // on ajoute la réference de la cellule suivante à la nouvelle cellule
+        temp.suivant = parcourList.suivant
+        // on ajoute la reference de la nouvelle cellule à la précédente
+        parcourList.suivant <- temp
+    finsi
+    // on retourne la list
+    retourne l
+-------------------
+remplacer(valeur:N, l:list,Position:N):list
+    temp <- l
+    cpt <- 0
+    tant que cpt < position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    temp.valeur = valeur
+    retourne l
+-------------------
+supprimer(l:list,position:N):list      
+    temp <- l
+    cpt <- 0
+    tant que cpt + 1< position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    temp.suivant <- temp.suivant.suivant
+    retourne l
+-------------------
+lire(l:list,position:N):N
+    temp <- l
+    cpt <- 0
+    tant que cpt <> position
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    retourne temp
+-------------------
+fonction taille(l:list):N
+    temp <- l
+    cpt <- 0
+    tant que temp <> null
+        temp <- temp suivant
+        cpt <- cpt + 1
+    fintantque
+    retourne cpt
+fin taille
+
+-----------------------------------
+Correction
+-----------------------------------
+----
+Structure List
+    var valeur: nouvellevar suivant : List
+fin List
+----
+fonction sousList(l:List, position:N): List
+    var result: List <- l
+    var cpt : N <- 0
+    pour cpt allant de 1 à position
+        result <- result.suivant
+        cpt suivant
+    retourner result
+fin sousList
+-----
+fonciton lire(l:list,position:N):N
+    retourne sousList(l,position).valeur
+fin lire
+-----
+procedure remplacer(newValeur:N, l:list,Position:N)
+    retourne sousList(l,position).valeur <- newValeur
+fin remplacer
+-----
+fonction ajouterDebut(in newValeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    var result: List
+    resultat <- creer list
+    result.valeur = newValeur
+    result.suivant = l
+    retourne result
+fin ajouterDebut
+-----
+fonction ajouterFin(in newValeur: N, in l:list):list
+    //creation d'une nouvelle cellule
+    var result: List <- l
+    si l = null
+        alors 
+            result <- ajouterDebut(l,newList)
+        sinon
+            tantque l.suivant != null
+                l <- l.suivant
+            fintantque
+            l.suivant <- CREER List
+            l.suivant.valeur <- newValeur
+    finsi
+    retourne result
+fin ajouterFin
+-----
+
+-----

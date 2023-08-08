@@ -1,0 +1,127 @@
+#container {
+  #buttonSwitchRoundContainer {
+    width: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+
+    button {
+      width: 45px;
+      height: 45px;
+      padding: 10px;
+      margin: 10px;
+      background: lightgrey;
+      border: 1px solid lightgrey;
+      border-radius: 100%;
+      position: relative;
+      cursor: pointer;
+
+      &:nth-child(1)::after {
+        content: 'Tour 1';
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+      }
+
+      &:nth-child(2)::after {
+        content: 'Tour 2';
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+      }
+    }
+  }
+
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    background: lightgray;
+    padding: 15px;
+    margin: 5px;
+    color: black;
+
+    &:nth-child(1) {
+      background: #282e38;
+      color: #ffffff;
+    }
+  }
+
+  #mainContainer {
+    #topContainer {
+      background: #ffffff;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    #topContainer {
+    }
+
+    #bottomContainer {
+      display: flex;
+      justify-content: space-between;
+
+      #leftContainer, #rightContainer {
+        padding: 25px;
+        margin: 10px;
+        width: 45%;
+        background: #ffffff;
+      }
+
+      #leftContainer {
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          text-align: center;
+          background: #ffffff;
+          thead{
+            background: lightgrey;
+            border-bottom: 1px solid #f8f9fa;
+          }
+          th, td {
+            padding: 15px;
+          }
+
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+
+          th {
+            background: #326fd1;
+            color: #ffffff;
+            padding: 20px;
+            border-bottom: 4px solid black;
+          }
+
+          td {
+            .categories {
+              background: lightgray;
+              width: 50%;
+              padding: 10px;
+            }
+
+          }
+
+
+        }
+      }
+      #rightContainer {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.selected {
+  color: red;
+  font-weight: bolder;
+}

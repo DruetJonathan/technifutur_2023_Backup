@@ -1,0 +1,253 @@
+header {
+    /*size*/
+    width: 100%;
+    height: 650px;
+    /*positioning*/
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    position: relative;
+    /*design*/
+    color: white;
+    background: url("../img/deadislandBgHeader.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position-y: 50%;
+    -webkit-box-shadow: inset 1px 100px 50px -11px rgba(0,0,0,0.5);
+    box-shadow: inset 1px 100px 100px -11px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px -100px 50px -11px rgba(0,0,0,0.5);
+    box-shadow: inset 1px -100px 100px -11px rgba(0,0,0,0.5);
+}
+header::after{
+    content: "";
+    clip-path: polygon(0 100%,100% 100%,0 0);
+    background: #272727;
+    height: 60px;
+    min-width: 1700px;
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    z-index: 1;
+}
+#logo {
+    width: 150px;
+    height: 80px;
+}
+#logoDiv{
+    position: absolute;
+    left: 1%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: fantasy;
+    font-size: 2em;
+}
+body{
+    background-color: #272727;
+}
+
+/*body {*/
+/*    position: relative;*/
+/*    !*background-color: beige;*!*/
+/*    background: url("../img/wp.jpg") no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;*/
+/*    -moz-background-size: cover;*/
+/*    -o-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
+/*HEADER*/
+/*header {*/
+/*    width: 100%;*/
+/*    height: 80px;*/
+/*    background-color: #222f3e;*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    color:white;*/
+/*}*/
+/*header a {*/
+/*    text-decoration: none;*/
+/*    border: none;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    position: relative;*/
+/*}*/
+
+/*header a {*/
+/*    text-decoration: none;*/
+/*    position: relative;*/
+/*}*/
+
+/*header a::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    bottom: -15px;*/
+/*    left: 0;*/
+/*    background-color: white;*/
+/*    visibility: hidden;*/
+/*    transform: scaleX(0);*/
+/*    transition: all .3s ease-in-out;*/
+/*}*/
+
+/*header a:hover::after {*/
+/*    visibility: visible;*/
+/*    transform: scaleX(1);*/
+/*}*/
+/*header div a::after{*/
+/*    display: none;*/
+/*}*/
+/*!**!*/
+/*h1 {*/
+/*    width: 200px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin: 0 auto;*/
+/*    flex-direction: column;*/
+/*    border-bottom: 1px solid darkred;*/
+/*    position: relative;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*h1::after{*/
+/*    content: "";*/
+/*    width: 50px;*/
+/*    height: 10px;*/
+/*    background-color: darkred;*/
+/*    position: absolute;*/
+/*    bottom: -5px;*/
+/*}*/
+
+/*!**!*/
+/*form{*/
+/*    width: 500px;*/
+
+/*}*/
+
+/*form {*/
+/*    margin: 0 auto;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    text-align: center;*/
+/*    padding-top: 20px;*/
+/*}*/
+
+
+/*form input {*/
+/*    padding: 1%;*/
+/*    margin: 2%;*/
+/*}*/
+
+/*form button {*/
+/*    width: 95%;*/
+/*    border: none;*/
+/*    background-color: lightblue;*/
+/*    margin: 2%;*/
+/*    padding: 3%;*/
+/*    border-radius: 15px;*/
+/*}*/
+
+
+/*article{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+/*!*PRODUCTS*!*/
+/*section {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-around;*/
+/*    margin-top: 5%;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*section article div {*/
+/*    width: 500px;*/
+/*    height: 350px;*/
+/*    color: black;*/
+/*    padding: 2%;*/
+/*    position: relative;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex-wrap: nowrap;*/
+/*    align-items: center;*/
+/*    margin: 15px;*/
+/*    background: rgba(255, 255, 255, 0.2);*/
+/*    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+/*    backdrop-filter: blur(5px);*/
+/*    -webkit-backdrop-filter: blur(5px);*/
+/*    border: 1px solid rgba(255, 255, 255, 0.3);*/
+/*}*/
+
+/*section article span {*/
+/*    position: absolute;*/
+/*    top: 3%;*/
+/*    right: 0;*/
+/*    background:  linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);;*/
+/*    width: 75px;*/
+/*    padding: 2%;*/
+/*    color: black;*/
+/*    font-family: "Arial Black";*/
+/*}*/
+
+/*#delete,#modify,#add {*/
+/*    box-shadow:inset 0px 1px 3px 0px #91b8b3;*/
+/*    background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);*/
+/*    background-color:#768d87;*/
+/*    border-radius:5px;*/
+/*    border:1px solid #566963;*/
+/*    cursor:pointer;*/
+/*    color:#ffffff;*/
+/*    font-family:Arial;*/
+/*    font-size:15px;*/
+/*    font-weight:bold;*/
+/*    padding:11px 23px;*/
+/*    text-decoration:none;*/
+/*    text-shadow:0px -1px 0px #2b665e;*/
+/*    width: 55%;*/
+/*    bottom: 2%;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    margin: 2px;*/
+/*}*/
+
+/*#delete:hover,#modify:hover,#add:hover {*/
+/*    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);*/
+/*    background-color:#6c7c7c;*/
+/*}*/
+/*#delete:active,#modify:active,#add:active {*/
+/*    position:relative;*/
+/*    top:1px;*/
+/*}*/
+/*.productForm{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    height: 70px;*/
+/*    margin: 15px auto;*/
+/*    width: 200px;*/
+/*    justify-content: center;*/
+/*}*/
+/*.divProduct{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    width: 350px;*/
+/*    background: none;*/
+/*    backdrop-filter: inherit;*/
+/*    border: none;*/
+/*    box-shadow: none;*/
+/*}*/
+/*.songsDiv{*/
+/*    height: 100px;*/
+/*    text-align: center;*/
+/*}*/

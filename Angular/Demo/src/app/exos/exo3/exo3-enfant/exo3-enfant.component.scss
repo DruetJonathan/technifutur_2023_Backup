@@ -1,0 +1,41 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    width: 30%;
+    word-break: break-all;
+}
+
+th {
+    background-color: darkred;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+button {
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+}

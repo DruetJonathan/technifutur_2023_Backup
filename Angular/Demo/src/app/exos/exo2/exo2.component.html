@@ -1,0 +1,10 @@
+<h2>Exo - ShoppingList</h2>
+
+<div class="chapter">
+    <div class="shoppingContainerInput">
+        <input [(ngModel)]='productName' name='productName'>
+        <button (click)="addProduct()"> Ajouter le produit</button>
+    </div>
+    <app-exo2-enfant [productList]="productList" (addOutput)="add($event)" (reductOutput)="reduct($event)"
+        (removeOutput)="remove($event)"></app-exo2-enfant>
+</div>

@@ -1,0 +1,15 @@
+- Empecher acces par url non admin
+-
+
+
+
+Faire en sorte de pas pouvoir delete un jeu si une request possède ce jeu, pareil pour le coach
+
+Fix le bug error message after creation car ca set une error mais ajoute bien + continuer le front du request
+- Faire le delete / modify et ne pas oublier de resety la liste de requestCoaching en attribut => voir la methode create
+- Faire le tableau des demandes en attente
+- Faire la feature rent
+
+fix le fait d'ajouter un role s'il possede deja
+
+-todo afficher les demandes en rent du user

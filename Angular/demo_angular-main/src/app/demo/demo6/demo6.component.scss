@@ -1,0 +1,18 @@
+form {
+    div {
+        margin-bottom: 1rem;
+    }
+}
+
+.remove-hobby {
+    font-size: x-large;
+    color : lightslategray;
+    cursor: pointer;
+    user-select: none;
+    margin : 0 0.5rem;
+
+    &:hover {
+        display: inline-block;
+        transform: scale(1.4);
+    }
+}

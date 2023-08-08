@@ -1,0 +1,26 @@
+CREATE TABLE PRODUCT(
+	ID_PRODUCT SERIAL PRIMARY KEY,
+	LIBELE VARCHAR(50),
+	DESCRIPTION VARCHAR(1000),
+	PRICE money
+);
+INSERT INTO PRODUCT(LIBELE,DESCRIPTION,PRICE) VALUES('Gel Douche','
+    UN GEL DOUCHE PLEIN DE FRAÎCHEUR : Offrez-vous la douceur du paradis grâce aux senteurs exquises du gel douche Tahiti Bois des Tropiques Rafraîchissante et revitalisez votre peau à chaque douche.
+    FORMULE RESPECTUEUSE DE LA PEAU : Avec son pH neutre, la formule de ce gel douche pour homme et femme respecte léquilibre physiologique de la peau, pour nettoyer sans agresser.
+    ',1.50);
+INSERT INTO PRODUCT(LIBELE,DESCRIPTION,PRICE) VALUES('Eau de Toilette 100 ml - Ambre Noir','Affirmez votre séduction avec Ambre Noir, qui allie le caractère intense et boisé du Patchouli et du Vétiver à la sensualité de la fève Tonka. Au cœur de cette fragrance, la subtilité du Cèdre et de la Lavande souligne son élégance.
+Son + : l’élégance de son capot bois issu de forêts gérées durablement.
+Ingrédients d origine végétale : huiles essentielles de Patchouli, de Vétiver, de Bergamote, de graines de Cardamome, de Mandarine, de bois de Cèdre , d’Elémi, de Lavande et absolus de feuilles de Violette et de fève Tonka.
+Format : Flacon',15),
+('Dundalk','The Umbro Dundalk FC 2022 away shirt draws inspiration from the classic 1990-91 kit,
+ with which the club famously won the league title. The 2022 jersey features almost the exact
+ same pattern, made up of parallelograms that have a gradient from white to red. The collar
+ and stripes on the sleeves appear in white, as do the sponsor logos.',65);
+
+ CREATE TABLE SONG(
+ 	SONG_ID SERIAL PRIMARY KEY,
+ 	LIBELE VARCHAR(50),
+ 	EMPLACEMENT_LINK VARCHAR(500)
+ );
+
+ insert into song(LIBELE,EMPLACEMENT_LINK) values('son 01','../song/01.mp3'),('son 02','../song/02.mp3')

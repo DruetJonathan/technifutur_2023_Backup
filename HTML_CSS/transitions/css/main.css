@@ -1,0 +1,26 @@
+p {
+    border: 1px solid black;
+    width: 200px;
+}
+
+p:hover {
+    /*transform: scale(2, 0.5);
+    color: darkcyan;
+    transition: all .4s ease-out;*/
+    animation: colorAnimation 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes colorAnimation {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: chartreuse;
+    }
+
+    100% {
+        color: pink;
+    }
+}

@@ -1,0 +1,30 @@
+<h1>Bindings</h1>
+<h3>Property Binding</h3>
+
+<div class="chapter">
+    <div>
+        <h4>One-Way Binding</h4>
+        <p>Bonjour et bienvenue {{ firstname }} {{lastname}}</p>
+    </div>
+    <div>
+        <h4>Two-way Binding</h4>
+        <input type="text" [(ngModel)]="lastname">
+    </div>
+</div>
+<div class="chapter">
+    <h3>Event Binding</h3>
+    <button (click)="direBonjour('fr')">Dire Bonjour en français</button>
+    <button (click)="direBonjour('nl')">Dire Bonjour en néerlandais</button>
+    <button (click)="direBonjour('de')">Dire bonjour en allemand</button>
+    <p>{{ message }}</p>
+</div>
+<div class=" chapter">
+    <h3>Attribute Binding</h3>
+    <button (click)="toggleIsActive()">Activer / Désactiver</button>
+    <button [disabled]="isActive">Click Me</button>
+    <br>
+    <img [src]="monUrlImg" alt="moto">
+    <p>"[ATTRIBUT]" pour pouvoir associer au code</p>
+    <p>"(EVENT)" pour pouvoir associer au code</p>
+
+</div>

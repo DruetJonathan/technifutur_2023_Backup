@@ -1,0 +1,28 @@
+<script src="https://kit.fontawesome.com/2549b07691.js" crossorigin="anonymous"></script>
+<header>
+  <div id="containerBurger" (click)="changeMenuState()">
+    <div id="bar1"></div>
+    <div id="bar2"></div>
+    <div id="bar3"></div>
+  </div>
+  <h1>Gestion de tournoi</h1>
+  <div *ngIf="isConnected">
+    <a routerLink="/profil">Profil</a>
+    <a (click)="logout()">Se déconnecter</a>
+  </div>
+  <div *ngIf="!isConnected">
+    <a routerLink="/login">Se connecter</a>
+  </div>
+</header>
+<nav id="leftMenu" class="notVisible">
+  <ul>
+    <li><a routerLink="/">Accueil</a></li>
+    <li><a routerLink="">Tournois</a>
+    <ul id="sousList">
+      <li><a routerLink="/tournaments">Index</a></li>
+      <li *ngIf="isAdmin"><a routerLink="/tournaments/add">Nouveau</a></li>
+    </ul>
+    </li>
+    <li *ngIf="isAdmin"><a routerLink="/newMember">Nouveau Membre</a></li>
+  </ul>
+</nav>

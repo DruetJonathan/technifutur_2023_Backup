@@ -1,0 +1,17 @@
+<h2>Demo 3 - Input & Output - Dialogue entre componsants</h2>
+<div class="chapter">
+    <div class="parent">
+        <p>Bonjour, je suis le parent</p>
+        <p>Mon enfant a besoin de {{childNeed}}</p>
+        <app-demo4-enfant [parentFirstname]="firstname" [parentHobbies]="parentHobbies"
+            (sendNeed)="receiveNeed($event)"></app-demo4-enfant>
+    </div>
+</div>
+<div class="chapter">
+    <p *ngIf="!trainerOfTheDay">En attente du formateur du jour...</p>
+    <p *ngIf=" trainerOfTheDay">Le formateur du jour est {{trainerOfTheDay.firstname}} {{trainerOfTheDay.lastname}}</p>
+    <div class="cards">
+        <app-trainer-card *ngFor="let formateur of trainers" [trainer]="formateur"
+            (sendTrainer)="changeTrainer($event)"></app-trainer-card>
+    </div>
+</div>

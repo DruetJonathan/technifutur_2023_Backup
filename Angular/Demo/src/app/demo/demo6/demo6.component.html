@@ -1,0 +1,85 @@
+<h2>Démo 6 - Les formulaires</h2>
+<div class="chapter">
+  <h3>Ajouter un contact: </h3>
+  <form [formGroup]="contactForm" (submit)="addContact()">
+    <div>
+      <input type="text" placeholder="Nom" formControlName="lastname">
+      <span *ngIf="contactForm.get('lastname')?.touched && contactForm.get('lastname')?.errors?.['required']"
+            class="error-msg">Ce champs est requis</span>
+      <span
+        *ngIf="contactForm.get('lastname')?.errors?.['minlength'] || contactForm.get('lastname')?.errors?.['maxlength']"
+        class="error-msg">La taille doit être compris entre 2 et 100 caractères</span>
+    </div>
+    <div>
+      <input type="text" placeholder="Prénom" formControlName="firstname">
+      <span *ngIf="contactForm.get('firstname')?.touched && contactForm.get('firstname')?.errors?.['required']"
+            class="error-msg">Ce champs est requis</span>
+      <span
+        *ngIf="contactForm.get('firstname')?.errors?.['minlength'] || contactForm.get('lastname')?.errors?.['maxlength']"
+        class="error-msg">La taille doit être compris entre 2 et 100 caractères</span>
+    </div>
+    <div>
+      <input type="date" placeholder="DDN" formControlName="birthdate">
+      <span *ngIf="contactForm.get('birthdate')?.touched && contactForm.get('birthdate')?.errors?.['required']"
+            class="error-msg">Ce champs est requis</span>
+
+    </div>
+    <div>
+      <input type="email" placeholder="email" formControlName="email">
+      <span *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']"
+            class="error-msg">Ce champs est requis</span>
+      <span
+        *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.dirty && contactForm.get('email')?.errors?.['email']"
+        class="error-msg">Le format est invalide</span>
+
+    </div>
+    <div>
+      <input type="number" placeholder="Taille (cm)" formControlName="height">
+      <span *ngIf="contactForm.get('height')?.errors?.['min'] || contactForm.get('height')?.errors?.['min']"
+            class="error-msg">La valeur doit être comprise entre 50 et 250</span>
+
+    </div>
+    <div>
+      <input id="couple" type="checkbox" formControlName="couple">
+      <label for="couple">En couple</label>
+
+    </div>
+    <div>
+      <input type="radio" name="" id="f" formControlName="gender" value="femme"><label for="f">Femme</label>
+      <input type="radio" name="" id="h" formControlName="gender" value="homme"><label for="h">Homme</label>
+      <input type="radio" name="" id="a" formControlName="gender" value="autres"><label for="a">Autre</label>
+    </div>
+    <div>
+      <select id="type" formControlName="type">
+        <optgroup label="Type de contact">
+          <option value="friend">Ami</option>
+          <option value="family">Famille</option>
+          <option value="other">Autres</option>
+        </optgroup>
+      </select>
+      <span *ngIf="contactForm.get('type')?.touched && contactForm.get('type')?.errors?.['required']" class="error-msg">Ce champs est requis</span>
+    </div>
+    <div>
+      <input type="text" placeholder="Pays" formControlName="country">
+      <span *ngIf="contactForm.get('country')?.touched && contactForm.get('required')?.errors?.['required']"
+            class="error-msg">Ce champs est requis</span>
+      <span class="error-msg"
+            *ngIf="contactForm.get('country')?.touched && contactForm.get('country')?.dirty && contactForm.get('country')?.errors?.['invalidcountry']">Vous devrez entrer l'un de ces pays: Belgique,Allemagne,Irlande</span>
+    </div>
+    <div formArrayName="hobbies">
+      <h4>les hobbies de {{contactForm.get('firstname')?.value ?? 'mon contact'}}</h4>
+      <div *ngFor="let hobby of hobbies.controls; let i = index">
+        <label [for]="'hobby'+i">Hobby N°{{i + 1}}</label>
+        <div class="containerHobby">
+          <input type="text" [formControlName]="i" [id]="'hobby'+i" class="rmb">
+          <span (click)="removeHobby(i)" class="crossDelete">✖</span>
+        </div>
+        <span *ngIf="hobbies.controls[i]?.touched && hobbies.controls[i]?.errors?.['required']" class="error-msg">Ce champs est requis</span>
+      </div>
+      <input type="button" class="btn mb-2" (click)="addHobby()" value="Ajouter un hobby">
+    </div>
+    <div>
+      <button class="btn mb-2">Ajouter contact</button>
+    </div>
+  </form>
+</div>

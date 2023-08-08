@@ -1,0 +1,65 @@
+#img-pouet {
+    width: 250px;
+}
+
+table, th, td {
+    border : 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem 2rem;
+}
+
+.popup {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.569);
+    position: absolute;
+    top : 0;
+    left : 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#close {
+    position: absolute;
+    top : 2%;
+    right: 3%;
+    font-size: 2rem;
+    color : whitesmoke;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.red {
+    color : red;
+    transition: all 500ms ease-in;
+}
+
+.orange {
+    color : orange;
+    transition: all 500ms ease-in;
+}
+
+.yellow {
+    color : yellow;
+    transition: all 500ms ease-in;
+}
+
+.green {
+    color : green;
+    transition: all 500ms ease-in;
+}
+
+.blue {
+    color : blue;
+    transition: all 500ms ease-in;
+}

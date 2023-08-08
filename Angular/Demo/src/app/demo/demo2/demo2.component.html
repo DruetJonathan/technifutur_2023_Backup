@@ -1,0 +1,26 @@
+<h1>Pipes</h1>
+<div class=" chapter">
+    <h3>De base</h3>
+    <h4>Pipes String</h4>
+    <p>Notre chaîne avant le pipe: {{maChaine}}</p>
+    <p>Notre chaîne après le pipe UpperCase:{{maChaine | uppercase}}</p>
+    <p>Notre chaîne après le pipe LoweCase:{{maChaine | lowercase}}</p>
+    <p>Notre chaîne après le pipe Capitalize:{{maChaine | titlecase}}</p>
+    <h4>Pipes Nombre</h4>
+    <p>Notre nombre avant le pipe: {{monNombre}}</p>
+    <p>Notre nombre après le pipe number {{monNombre | number:"1.0-2"}}</p>
+    <p class="important">number -> number:"nombreGauchMin.nombreDroiteMin-nombreDroiteMax"</p>
+    <h4>Pipes Date</h4>
+    <p>Notre date avant le pipe: {{dateDuJour}}</p>
+    <p>Notre date après le pipe: {{dateDuJour | date:"dd-MM-yyyy"}}</p>
+    <p>Notre date après le pipe: {{dateDuJour | date:"short"}}</p>
+    <p class="important">Voir doc -> <a href="https://angular.io/api/common/DatePipe">Docs Date Pipe</a></p>
+
+</div>
+<div class=" chapter">
+    <h3>Custom</h3>
+    <p>Température en °C : {{temperature}}</p>
+    <p>18 °C -> °F : {{18 | toFarenheit}}</p>
+    <p>18 °C -> °Kelvin : {{18 | convertTemp :"kelvin"}}</p>
+    <p>18 °F -> °K : {{18 | convertTemp :"fToKelvin" | number:"1.0-1"}}</p>
+</div>

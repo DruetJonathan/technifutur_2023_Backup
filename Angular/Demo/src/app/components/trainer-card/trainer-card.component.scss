@@ -1,0 +1,45 @@
+.big {
+    font-size: x-large;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.card {
+    &>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        p {
+            margin: 1rem;
+        }
+    }
+
+    width: 70%;
+    padding: 1rem;
+    color: black;
+    border-radius: 2rem;
+    height: 400px;
+
+    img {
+        width: 70%;
+    }
+
+
+
+}
+
+.boy {
+    background-color: lightblue;
+}
+
+.girl {
+    background-color: pink;
+}

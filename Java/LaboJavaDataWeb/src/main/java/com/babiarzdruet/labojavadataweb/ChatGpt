@@ -1,0 +1,102 @@
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String username;
+    private String password;
+
+    @ManyToMany
+    private Set<Role> roles = new HashSet<>();
+
+    // Autres attributs et méthodes de la classe User
+    // ...
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(Role role) {
+        roles.add(role);
+        role.getUsers().add(this);
+    }
+
+    public void removeRole(Role role) {
+        roles.remove(role);
+        role.getUsers().remove(this);
+    }
+}
+-------------------------------------------------
+
+@Entity
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users = new HashSet<>();
+
+    // Autres attributs et méthodes de la classe Role
+    // ...
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+}
+------------------------------------------------------
+
+User user = new User();
+// ...
+
+Role adminRole = new Role();
+adminRole.setName("admin");
+
+Role coachRole = new Role();
+coachRole.setName("coach");
+
+user.addRole(adminRole);
+user.addRole(coachRole);
+
+// Pour supprimer un rôle d'un utilisateur
+user.removeRole(coachRole);
+------------------------------------------------------
+
+EntityManager entityManager = // Initialisation de l'EntityManager
+EntityTransaction transaction = entityManager.getTransaction();
+
+try {
+    transaction.begin();
+
+    User user = new User();
+    // Initialiser les propriétés de l'utilisateur
+
+    Role adminRole = new Role();
+    adminRole.setName("admin");
+
+    Role coachRole = new Role();
+    coachRole.setName("coach");
+
+    user.addRole(adminRole);
+    user.addRole(coachRole);
+
+    entityManager.persist(user);
+
+    transaction.commit();
+} catch (Exception e) {
+    transaction.rollback();
+    e.printStackTrace();
+} finally {
+    entityManager.close();
+}
+------------------------------------------------
+

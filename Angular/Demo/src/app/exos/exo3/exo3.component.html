@@ -1,0 +1,9 @@
+<h2>Exo - ShoppingList - Service</h2>
+
+<div class="chapter">
+    <div class="shoppingContainerInput">
+        <input [(ngModel)]='productName' name='productName' (keyup.Enter)="add(productName)">
+        <button (click)="add(productName)"> Ajouter le produit</button>
+    </div>
+    <app-exo3-enfant></app-exo3-enfant>
+</div>

@@ -1,0 +1,20 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<nav class="{{bgClass}}">
+    <ul>
+        <li>
+            <a routerLink="/bases">Bases</a>
+        </li>
+        <li>
+            <a routerLink="/services">Services et Formulaires</a>
+        </li>
+        <li>
+            <a routerLink="/observables">Observables</a>
+        </li>
+        <li>
+          <a routerLink="/obs/thermometre">BehaviorSubject</a>
+        </li>
+    </ul>
+    <a routerLink="panier" id="panier">Panier: {{totalPrix}}€</a>
+</nav>

@@ -1,0 +1,41 @@
+<div class="h-screen w-screen bg-white z-10 absolute top-0 flex justify-center items-center">
+  <div class="w-2/5">
+    <img src="assets/images/connexionLogo.svg" alt="imgConnexion" draggable="false">
+  </div>
+  <form [formGroup]="registerForm"
+    class="flex flex-col items-center justify-center h-auto w-2/6 shadow-2xl shadow-secondary-700 m-20">
+    <div class="m-2 p-2">
+      <input type="text" placeholder="Nom" class="" formControlName="lastname" [ngClass]="{invalid: registerForm.get('lastname')?.touched && registerForm.get('lastname')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('lastname')?.touched && registerForm.get('lastname')?.errors?.['required']">Ce champs est requis</span>
+      <span *ngIf="registerForm.get('lastname')?.touched && registerForm.get('lastname')?.errors?.['maxLength']">Ce champs ne doit pas dépassé 100 caractères</span>
+    </div>
+    <div class="m-2 p-2">
+      <input type="text" placeholder="Prénom" class="" formControlName="firstname" [ngClass]="{invalid: registerForm.get('firstname')?.touched && registerForm.get('firstname')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('firstname')?.touched && registerForm.get('firstname')?.errors?.['required']">Ce champs est requis</span>
+
+    </div>
+    <div class="m-2 p-2">
+      <input type="text" placeholder="Pseudo" class="" formControlName="pseudo" [ngClass]="{invalid: registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']">Ce champs est requis</span>
+
+    </div>
+    <div class="m-2 p-2">
+      <input type="email" placeholder="email" class="" formControlName="email" [ngClass]="{invalid: registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">Ce champs est requis</span>
+
+    </div>
+    <div class="m-2 p-2">
+      <input type="password" placeholder="Password" class="" formControlName="password" [ngClass]="{invalid: registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">Ce champs est requis</span>
+
+    </div>
+    <div class="m-2 p-2">
+      <input type="password" placeholder="Confirm password" class="" formControlName="confirmPassword" [ngClass]="{invalid: registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']}">
+      <span *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']">Ce champs est requis</span>
+
+    </div>
+    <a routerLink="/login" class="p-2">Se connecter ?</a>
+    <a routerLink="/" class="m-2 p-2">Retour à l'accueil</a>
+    <button class="btn primary my-10">Créer un compte</button>
+  </form>
+</div>

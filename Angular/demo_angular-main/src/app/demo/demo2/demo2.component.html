@@ -1,0 +1,35 @@
+<h2>Les pipes :</h2>
+
+<div class="chapter">
+    <h3>Les pipes de base</h3>
+    <h4>Pipes string</h4>
+    <p>Notre chaine avant le pipe : {{ maChaine }}</p>
+    <p>Notre chaine après le pipe Uppercase {{ maChaine | uppercase }}</p>
+    <p>Notre chaine après le pipe Lowercase {{ maChaine | lowercase }}</p>
+    <p>Notre chaine après le pipe Capitalize {{ maChaine | titlecase}}</p>
+
+    <h4>Pipe number</h4>
+    <p>Notre nombre avant le pipe : {{ monNombre }}</p>
+    <p>Notre nombre après le pipe : {{ monNombre | number : "1.0-2" }}</p>
+    <!-- X:Y-Z    
+        X : Nombre de chiffre minimum avant la virgule
+        Y : Nombre de chiffre minimum après la virgule
+        Z : Nombre de chiffre maximum après la virgule
+    -->
+
+    <h4>Pipe Date</h4>
+    <p>Notre date avant le pipe : {{ dateDuJour }}</p>
+    <p>Notre date après le pipe : {{ dateDuJour | date : "dd MMMM yyyy" }}</p>
+    <p>Notre date après le pipe : {{ dateDuJour | date : "dd/MM/yyyy" }}</p>
+    <p>Notre date après le pipe : {{ dateDuJour | date : "short" }}</p>
+
+</div>
+
+<div class="chapter">
+    <h3>Les custom pipes</h3>
+    <p>Température en °C : {{ temperature }} </p>
+    <p>Température en °F : {{ temperature | toFarenheit }}</p>
+    <p> 18°C -> {{ 18 | convertTemp : "cToFarenheit" }}°F</p>
+    <p> 64°F -> {{ 64 | convertTemp : "fToCelcius" | number : "1.0-1" }}°C</p>
+    <!-- Vous pouvez enchainer les pipes tant que vous respectez les types -->
+</div>

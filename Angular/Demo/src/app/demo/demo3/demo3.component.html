@@ -1,0 +1,77 @@
+<h2>Demo 3 - Les Directives</h2>
+<div class="chapter">
+    <h3>Les components directives</h3>
+    <div>
+        <h4>ngModel</h4>
+        <p>Permet de faire le binding Two-way</p>
+        <a class="important" routerLink="/demo/demo1">Voir démo 1</a>
+    </div>
+    <div>
+        <h4>ngStyle</h4>
+        <p [ngStyle]="{color: colors[currentColor]}">Joyeux Noël !</p>
+    </div>
+    <div>
+        <h4>ngClass</h4>
+        <p [ngClass]="{big:isBig,bold:isBold,italic:isItalic}">Le changement, c'est maintenant !</p>
+        <button class="btn" (click)="toggleBold()">Gras / Pas gras</button>
+        <button class="btn" (click)="toggleItalic()">Italique / Pas italique</button>
+        <button class="btn" (click)="toggleBig()">Gros / Petit</button>
+    </div>
+</div>
+<div class="chapter">
+    <h3>Les structurals directives</h3>
+    <div>
+        <h4>ngIf</h4>
+        <button class="btn" (click)="toggleApagnan()">T'as les cramptés ?</button>
+        <p *ngIf="apagnan">Quoi</p>
+        <p *ngIf="!apagnan">cubeh</p>
+    </div>
+    <div>
+        <h4>ngFor</h4>
+        <div class="cards">
+            <div class='card' *ngFor="let trainer of trainers"
+                [ngClass]="{boy:trainer.gender==='m',girl:trainer.gender==='f'}">
+                <div *ngIf="trainer.project">
+                    <h5>{{trainer.firstname +' '+ trainer.lastname}}</h5>
+                    <img src="{{trainer.avatar}}" alt="{{'avatar de '+ trainer.firstname}}">
+
+                    <p>Non disponible</p>
+                </div>
+                <div *ngIf="!trainer.project">
+                    <h5>{{trainer.firstname +' '+ trainer.lastname}}</h5>
+                    <img src="{{trainer.avatar}}" alt="{{'avatar de '+ trainer.firstname}}">
+                    <p>{{trainer.birthdate | date: 'dd-MM-YYY'}}</p>
+                    <button [disabled]="trainer.vacation" class="btn">Choisir ce formateur</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h4>ngSwitch</h4>
+        <input type="text" [(ngModel)]="drinkName">
+        <div [ngSwitch]="drinkName">
+            <div *ngSwitchCase="'coca'">
+                Voila un coca
+            </div>
+            <div *ngSwitchCase="'fanta'">
+                Voila un fanta
+            </div>
+            <div *ngSwitchCase="'café'">
+                Voila un café
+            </div>
+            <div *ngSwitchDefault>
+                Entrez un nom de boisson
+            </div>
+        </div>
+    </div>
+</div>
+<div class="chapter">
+    <h3>Les customs directives</h3>
+    <p>Lorem ipsum, dolor <span highlight>sit amet consectetur adipisicing elit.</span> Itaque esse inventore suscipit.
+        Error
+        fugiat itaque
+        explicabo ipsam placeat, voluptate, <span highlight>sit amet consectetur adipisicing elit.</span> Saepe enim
+        aliquid odit?
+    </p>
+</div>

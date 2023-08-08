@@ -1,0 +1,34 @@
+<h2>Modification du fan de série : {{id}}</h2>
+<div class="chapter">
+  <a routerLink="/exos/exo5">Retour</a>
+  <form [formGroup]="createForm" (submit)="updateFanSerie()">
+    <div>
+      <input type="text" placeholder="Nom" formControlName="nom">
+      <span class="error-msg" *ngIf="createForm.get('nom')?.touched &&
+      createForm.get('nom')?.errors?.['required']">Ce champs est requis</span>
+    </div>
+    <div>
+      <input type="date" formControlName="ddn">
+      <span class="error-msg" *ngIf="createForm.get('ddn')?.touched &&
+      createForm.get('ddn')?.errors?.['required']">Ce champs est requis</span>
+      <span class="error-msg" *ngIf="createForm.get('ddn')?.touched && createForm.get('ddn')?.dirty &&
+      createForm.get('ddn')?.errors?.['invalidDDN']">Age < 13</span>
+    </div>
+    <div formArrayName="series">
+      <div>
+        <span *ngIf="series.length==0" class="al-c">Auncune Série</span>
+      </div>
+      <div *ngFor="let serie of series.controls; let i = index">
+        <label [for]="'serie'+i">Serie N°{{i + 1}}</label>
+        <div class="containerHobby">
+          <input type="text" [formControlName]="i" [id]="'artiste'+i" class="rmb">
+          <span (click)="removeSerie(i)" class="crossDelete">✖</span>
+        </div>
+        <span *ngIf="series.controls[i]?.touched && series.controls[i]?.errors?.['required']" class="error-msg">Ce champs est requis</span>
+      </div>
+      <input type="button" class="mb-2" (click)="addSerie()" value="Ajouter une série">
+    </div>
+    <button class="mb-2">Update le fan</button>
+
+  </form>
+</div>

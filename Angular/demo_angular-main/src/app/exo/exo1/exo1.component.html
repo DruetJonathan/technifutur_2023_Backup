@@ -1,0 +1,11 @@
+<div class="chapter">
+    <h2>Exercice Chrono :</h2>
+    <div class="flex-col-center">
+        <div class="chrono">{{ seconds | convertTime : "short" }}</div>
+        <div>
+            <button class="btn" (click)="start()" [disabled]="timer">Start</button>
+            <button class="btn" (click)="pause()" [disabled]="!timer">Pause</button>
+            <button class="btn" (click)="reset()" [disabled]="seconds === 0">Reset</button>
+        </div>
+    </div>
+</div>

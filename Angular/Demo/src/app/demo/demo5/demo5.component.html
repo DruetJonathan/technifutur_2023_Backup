@@ -1,0 +1,13 @@
+<h2>Demo 5 - Service & Injection</h2>
+<div class="chapter">
+    <div *ngIf="!connectedUser">
+        <input type="text" placeholder="Entrez votre pseudo / email" [(ngModel)]="login">
+        <input type="password" placeholder="Entrez votre mot de passe" [(ngModel)]="password">
+        <button class="btn" (click)="connect()">Se connecter</button>
+    </div>
+    <div *ngIf="connectedUser">
+        <p>Hello {{connectedUser.firstname}}</p>
+        <button class="btn" (click)="disconnect()">Se déconnecter</button>
+
+    </div>
+</div>

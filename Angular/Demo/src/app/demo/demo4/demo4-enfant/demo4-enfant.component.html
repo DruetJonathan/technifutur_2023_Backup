@@ -1,0 +1,15 @@
+<div class="enfant">
+    <p>Bonjour, je suis l'enfant de {{parentFirstname}}</p>
+    <div *ngIf="parentHobbies.length>0">
+        <p>Ses hobbies sont:</p>
+        <ul>
+            <li *ngFor="let hobby of parentHobbies">{{hobby}}</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Ouin Ouin j'ai besoin de:</h3>
+        <button (click)="clickNeed('manger')" class="btn">Manger</button>
+        <button class="btn" (click)="clickNeed('dormir')">Dormir</button>
+        <button class="btn" (click)="clickNeed('changer')">Me changer</button>
+    </div>
+</div>

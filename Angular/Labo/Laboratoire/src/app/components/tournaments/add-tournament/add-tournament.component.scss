@@ -1,0 +1,64 @@
+section{
+  width: 80%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 15px;
+}
+/* Styliser le titre */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Styliser les conteneurs de champs */
+div {
+  margin-bottom: 10px;
+}
+
+/* Styliser les champs de saisie */
+
+input[type="checkbox"] {
+  width: 5%;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"]{
+  width: 98%;
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Styliser les boutons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Styliser les boutons "Reset" et "Rechercher" */
+button[type="reset"] {
+  background-color: #f2f2f2;
+}
+
+button[type="submit"] {
+  background: #282e38;
+  color: #fff;
+}
+
+/* Styliser les étiquettes des cases à cocher */
+label {
+  margin-right: 5px;
+}
+.error{
+  color: red;
+}

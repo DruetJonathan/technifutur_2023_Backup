@@ -1,0 +1,54 @@
+<div id="container">
+  <a routerLink="/tournaments">Retour à l'index</a>
+  <h1>{{tournament?.name}}</h1>
+  <div id="buttonSwitchRoundContainer">
+    <button (click)="changeRound(0)" [ngClass]="{'selected' : round === 0}">1</button>
+    <button (click)="changeRound(1)"[ngClass]="{'selected' : round === 1}">2</button>
+  </div>
+  <div id="mainContainer">
+
+    <div id="bottomContainer">
+      <div id="leftContainer">
+<!--        todo faire un get du match en fonciton de l'id du tournois-->
+        <table>
+          <thead>
+            <tr>
+              <td>Position</td>
+              <td>Nom</td>
+<!--              <td>P</td>-->
+<!--              <td>V</td>-->
+<!--              <td>D</td>-->
+<!--              <td>N</td>-->
+<!--              <td>Score</td>-->
+            </tr>
+          <tr>
+            <td>1</td>
+            <td>{{match?.whiteName}}</td>
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{match?.blackName}}</td>
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+            <!--            <td></td>-->
+          </tr>
+          </thead>
+        </table>
+      </div>
+      <div id="rightContainer">
+        <p>{{tournament!.matches[this.round].whiteName}}</p>
+        <p>VS</p>
+        <p>{{tournament!.matches[this.round].blackName}}</p>
+        <p>{{tournament!.matches[this.round].result}}</p>
+<!--        //todo faire le select de win-->
+      </div>
+    </div>
+  </div>
+</div>

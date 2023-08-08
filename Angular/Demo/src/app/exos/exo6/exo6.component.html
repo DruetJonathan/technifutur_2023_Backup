@@ -1,0 +1,38 @@
+<h2>Exo - Pokedex</h2>
+<div class="chapter">
+  <div class="main">
+    <div class="container">
+      <div class="infoContainer">
+        <h3 *ngIf="!currentPokemon">Info pokemon</h3>
+        <h3 *ngIf="currentPokemon">{{currentPokemon.name}}</h3>
+        <div *ngIf="!currentPokemon">
+          <img src="/assets/images/gifWalk.gif" alt="walk" id="walkImg" >
+        </div>
+        <div *ngIf="currentPokemon" class="containerImage">
+          <img src="{{currentPokemon.sprites.front_default}}" alt="walk" id="pokemonImgFront">
+          <img src="{{currentPokemon.sprites.back_default}}" alt="walk" id="pokemonImgback">
+        </div>
+        <div class="infoDiv">
+          <div class="info" *ngIf="currentPokemon">
+            <p>N° : {{currentPokemon.id}}</p>
+            <p>Taille : {{currentPokemon.height}}</p>
+            <p>Poids : {{currentPokemon.weight}}</p>
+          </div>
+          <div class="info" *ngIf="!currentPokemon">
+            <p id="waiting">Waiting...</p>
+          </div>
+        </div>
+      </div>
+      <div class="containerList">
+        <span class="up" (click)="getListPokemonByUrl(listPokemon.previous)"><button [disabled]="!listPokemon.previous">🔺</button></span>
+        <span class="down" (click)="getListPokemonByUrl(listPokemon.next)"><button [disabled]="!listPokemon.next">🔻</button></span>
+        <div class="list">
+          <ul *ngIf="listPokemon">
+            <li *ngFor="let pokemon of listPokemon.results" (click)="getPokemon(pokemon.name)">{{pokemon.name}}</li>
+<!--            [ngStyle]="{'color':this.pokemon.color.name}"-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

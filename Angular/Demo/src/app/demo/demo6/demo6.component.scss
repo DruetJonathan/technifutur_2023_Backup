@@ -1,0 +1,41 @@
+input,
+select,
+option {
+    margin: 1rem;
+    padding: 0.25rem;
+}
+h4{
+  text-decoration: none;
+}
+.crossDelete{
+  width: 50px;
+  padding: 0.15rem;
+  color:black;
+  cursor: pointer;
+  user-select: none;
+}
+input{
+  padding: 0.25rem;
+
+}
+.containerHobby{
+  padding: 0.15rem;
+  background-color: white;
+  width: 180px;
+  border: 1px solid gray;
+  margin: 0.15rem;
+  input{
+    margin: 0.25rem;
+    border: none;
+    &:focus,&:active{
+      border: none;
+    }
+  }
+}
+.rmb{
+  border: none;
+  &:focus,&:active{
+    border: none;
+    outline: none;
+  }
+}

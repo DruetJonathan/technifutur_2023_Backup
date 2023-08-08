@@ -1,0 +1,48 @@
+<h2>Modification du son n°{{trackId}}:</h2>
+<div class="chapter">
+  <a routerLink="/demo/demo7">Retour</a>
+  <form [formGroup]="contactForm" (submit)="updateTrack()">
+    <div>
+      <input type="text" placeholder="Titre" formControlName="titre">
+      <span class="error-msg" *ngIf="contactForm.get('titre')?.touched &&
+      contactForm.get('titre')?.errors?.['required']">Ce champs est requis</span>
+    </div>
+    <div>
+      <input type="number" placeholder="Durée en secondes" formControlName="duree" min="0" max="360">
+      <span class="error-msg" *ngIf="contactForm.get('duree')?.touched &&
+      contactForm.get('duree')?.errors?.['required']">Ce champs est requis</span>
+      <span class="error-msg" *ngIf="
+      contactForm.get('duree')?.errors?.['max'] || contactForm.get('duree')?.errors?.['min']">Durée min est de 0 et max. est de 360 secondes</span>
+    </div>
+    <div>
+      <input type="text" placeholder="Album" formControlName="album">
+    </div>
+    <div>
+      <select id="genre" formControlName="genre">
+        <optgroup label="Genre de la musique">
+          <option value="" hidden>Genre de la musique</option>
+          <option value="RNB">RNB</option>
+          <option value="Pop">Pop</option>
+          <option value="Electro">Electro</option>
+        </optgroup>
+      </select>
+      <span class="error-msg" *ngIf="contactForm.get('genre')?.touched &&
+      contactForm.get('genre')?.errors?.['required']">Ce champs est requis</span>
+    </div>
+    <div formArrayName="artistes">
+      <div>
+        <span *ngIf="artistes.length==0" class="al-c">Auncun artiste</span>
+      </div>
+      <div *ngFor="let artiste of artistes.controls; let i = index">
+        <label [for]="'artiste'+i">Artiste N°{{i + 1}}</label>
+        <div class="containerHobby">
+          <input type="text" [formControlName]="i" [id]="'artiste'+i" class="rmb">
+          <span (click)="removeArtiste(i)" class="crossDelete">✖</span>
+        </div>
+        <span *ngIf="artistes.controls[i]?.touched && artistes.controls[i]?.errors?.['required']" class="error-msg">Ce champs est requis</span>
+      </div>
+      <input type="button" class="mb-2" (click)="addArtiste()" value="Ajouter un artiste">
+    </div>
+    <button class="mb-2">Update Track</button>
+  </form>
+</div>

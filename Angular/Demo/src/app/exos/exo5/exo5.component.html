@@ -1,0 +1,25 @@
+<h2>Exo - CRUD</h2>
+<div class="chapter">
+  <h3>Liste des fans:</h3>
+  <a routerLink="/exos/exo5/create-fan-serie">Ajouter un nouveau fan</a>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Date de naissance</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let fanSerie of _fanSerieList">
+      <td>{{fanSerie.nom}}</td>
+      <td>{{fanSerie.ddn | date:'dd-MM-YYYY'}}</td>
+      <td>
+        <a class="btn" routerLink="/exos/exo5/seeDetails/{{fanSerie.id}}">🔎</a>
+        <a class="btn" routerLink="/exos/exo5/update-fan-serie/{{fanSerie.id}}">📄</a>
+        <button class="btn" (click)="delete(fanSerie.id)">❌</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

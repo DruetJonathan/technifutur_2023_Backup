@@ -1,0 +1,16 @@
+
+
+    27 + 3 = 30 ET 15 + 2 < 16                      -->FAUX
+    27 = 27 OU 15 < 2                               --> VRAI
+    27 = 27 OU NON (15 < 2)                         -->VRAI
+    27 = 28 ET NON 15 < 2                           -->FAUX ------> Priorité des opérateurs
+    27 = 27 ET 15 < 2 OU VRAI                       --> VRAI
+    27 = 28 ET ( 15 < 2 OU VRAI )                   -->FAUX
+    27 = 28 ET NON (15 < 2 ) OU VRAI                -->FAUX
+    27 = 28 ET NON ( 15 < 2 OU VRAI )               -->FAUX
+    NON ( 15 - 5 = 12 ET VRAI )                     --> VRAI
+    NON ( 15 - 5 = 12 ) ET VRAI                     -->VRAI
+    NON ( 27 = 28 ) OU NON ( 15 < 2 )               -->VRAI
+    ( 27 = 27 ) ET NON ( 15 > 2 )                   -->FAUX
+    ( 27 = 15 ) OU VRAI ET FAUX                     -->FAUX
+
